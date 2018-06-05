@@ -1,5 +1,7 @@
 package kr.ac.pusan.cs.sinbaram.nolinerforadmin;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -18,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import kr.ac.pusan.cs.sinbaram.nolinerforadmin.RSA.RSA;
@@ -27,12 +32,20 @@ public class Make_List extends AppCompatActivity {
     DatabaseReference mRef;
     private Button btnCancel;
     private Button btnRegister;
+    private Button btnOpen;
+    private Button btnClose;
+    private DatePicker datePicker;
+    private Calendar calendar;
     private EditText lineName;
     private EditText closeTime;
     private EditText openTime;
     private EditText interTime;
+    private TextView opentxt;
+    private TextView closetxt;
     private EditText maxNum;
     private String public_id;
+    private int openyear, openmonth, openday;
+    private int closeyear, closemonth, closeday;
     SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
     private List lineList = new ArrayList();
     Admin_Account auth;
@@ -40,9 +53,13 @@ public class Make_List extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make__list);
-
+        calendar = Calendar.getInstance();
         btnCancel = (Button)findViewById(R.id.btnCancel);
         btnRegister = (Button)findViewById(R.id.btnRegister);
+        btnOpen = findViewById(R.id.openBtn);
+        btnClose = findViewById(R.id.closeBtn);
+        opentxt = findViewById(R.id.opentxt);
+        closetxt = findViewById(R.id.closetxt);
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference();
         Intent intent = getIntent();
@@ -55,8 +72,13 @@ public class Make_List extends AppCompatActivity {
         maxNum = (EditText)findViewById(R.id.maxNum);
         public_id = auth.Admin_Public_ID;
 
-        DatePicker openDate;
-        DatePicker closeDate;
+        calendar = Calendar.getInstance();
+        openyear = calendar.get(Calendar.YEAR);
+        closeyear = calendar.get(Calendar.YEAR);
+        openmonth = calendar.get(Calendar.MONTH);
+        closemonth = calendar.get(Calendar.MONTH);
+        openday = calendar.get(Calendar.DAY_OF_MONTH);
+        closeday = calendar.get(Calendar.DAY_OF_MONTH);
 
         mRef.child("Line List").addValueEventListener(new ValueEventListener() {
             @Override
@@ -76,43 +98,14 @@ public class Make_List extends AppCompatActivity {
 
 
 
-        final String open_year =  String.valueOf();
-        final String open_month = String.valueOf(openDate.getMonth());
-        final String open_day = String.valueOf(openDate.getDayOfMonth());
-        final String close_year =  String.valueOf(closeDate.getYear());
-        final String close_month = String.valueOf(closeDate.getMonth());
-        final String close_day = String.valueOf(closeDate.getDayOfMonth());
-
-        openDate.init(openDate.getYear(), openDate.getMonth(), openDate.getDayOfMonth(), new DatePicker.OnDateChangedListener() {
-            @Override
-            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            }
-        });
-
-
-        closeDate.init(closeDate.getYear(), closeDate.getMonth(), closeDate.getDayOfMonth(), new DatePicker.OnDateChangedListener() {
-            @Override
-            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            }
-        });
-
-
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String line_name = lineName.getText().toString();
-                String close_time = close_year+"-"+close_month+"-"+close_day+" "+closeTime.getText().toString();
-                String open_time = open_year+"-"+open_month+"-"+open_day+" "+openTime.getText().toString();
+                String close_time = closeTime.getText().toString();
+                String open_time = openTime.getText().toString();
                 String inter_time = interTime.getText().toString();
                 String max_nums = maxNum.getText().toString();
-
-
-                open_year =  String.valueOf(openDate.getYear());
-                open_month = String.valueOf(openDate.getMonth());
-                open_day = String.valueOf(openDate.getDayOfMonth());
-                close_year =  String.valueOf(closeDate.getYear());
-                close_month = String.valueOf(closeDate.getMonth());
-                close_day = String.valueOf(closeDate.getDayOfMonth());
 
                 if(line_name.isEmpty()||close_time.isEmpty()||open_time.isEmpty()||inter_time.isEmpty()||max_nums.isEmpty()){
                     Toast.makeText(Make_List.this,"빈칸을 채우세요.",Toast.LENGTH_LONG).show();
@@ -152,7 +145,6 @@ public class Make_List extends AppCompatActivity {
 
             }
         });
-
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -160,4 +152,45 @@ public class Make_List extends AppCompatActivity {
             }
         });
     }
+    @SuppressWarnings("deprecation")
+    public void openDate(View view) {
+        showDialog(998);
+        opentxt.setText(String.valueOf(openyear)+"/"+String.valueOf(openmonth+1)+"/"+String.valueOf(openday));
+
+    }
+    @SuppressWarnings("deprecation")
+    public void closeDate(View view) {
+        showDialog(999);
+        closetxt.setText(String.valueOf(closeyear)+"/"+String.valueOf(closemonth+1)+"/"+String.valueOf(closeday));
+    }
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        // TODO Auto-generated method stub
+        if (id == 999) {
+            return new DatePickerDialog(this,
+                    myDateListener, openyear, openmonth, openday);
+        }
+        if (id == 998) {
+            return new DatePickerDialog(this,
+                    myDateListener, closeyear, closemonth, closeday);
+        }
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener myDateListener = new
+            DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker arg0,
+                                      int arg1, int arg2, int arg3) {
+                    // TODO Auto-generated method stub
+                    // arg1 = year
+                    // arg2 = month
+                    // arg3 = day
+                    //showDate(arg1, arg2+1, arg3);
+                    Toast.makeText(getApplicationContext(), String.valueOf(arg1)+"/"+String.valueOf(arg2+1)+"/"+String.valueOf(arg3),
+                            Toast.LENGTH_SHORT)
+                            .show();
+                }
+            };
+
 }

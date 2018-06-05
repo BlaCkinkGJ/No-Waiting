@@ -1,4 +1,4 @@
-package kr.ac.pusan.cs.sinbaram.nolinerforuser;
+package kr.ac.pusan.cs.sinbaram.nolinerforadmin;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         try{
-            Thread.sleep(1000);
+            Thread.sleep(4000);
         }catch (InterruptedException e)
         {
             e.printStackTrace();
