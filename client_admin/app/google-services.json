@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "261447337862",
+    "firebase_url": "https://no-waiting-de057.firebaseio.com",
+    "project_id": "no-waiting-de057",
+    "storage_bucket": "no-waiting-de057.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261447337862:android:0640854c84ca062e",
+        "android_client_info": {
+          "package_name": "com.example.koomg.firebase04"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261447337862-iff41abjv7rdc6ib3bj0vfdrj2efbasq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChIa3TlFCZ8kyJe1g2sfO1XqqO-X0_Scw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261447337862:android:c459e3017e05be65",
+        "android_client_info": {
+          "package_name": "kr.ac.pusan.cs.sinbaram.nolinerforadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261447337862-iff41abjv7rdc6ib3bj0vfdrj2efbasq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChIa3TlFCZ8kyJe1g2sfO1XqqO-X0_Scw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261447337862:android:63baea1e949bc9c5",
+        "android_client_info": {
+          "package_name": "kr.ac.pusan.cs.sinbaram.nolinerforuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261447337862-iff41abjv7rdc6ib3bj0vfdrj2efbasq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChIa3TlFCZ8kyJe1g2sfO1XqqO-X0_Scw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
