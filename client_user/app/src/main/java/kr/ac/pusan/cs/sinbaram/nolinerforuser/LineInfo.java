@@ -3,6 +3,7 @@ package kr.ac.pusan.cs.sinbaram.nolinerforuser;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class LineInfo extends AppCompatActivity {
     private TextView PubID;
     private TextView LineName;
     private TextView State;
+    private TextView EnrollNum;
     private Line line;
     private String Public_ID;
 
@@ -37,7 +39,7 @@ public class LineInfo extends AppCompatActivity {
     private String User_ID;
     Date mDate;
     long mNow;
-    SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+    SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,20 +54,21 @@ public class LineInfo extends AppCompatActivity {
         PubID.setText(Public_ID);
         LineName.setText(line.Line_Name);
         RegistBtn = findViewById(R.id.registbtn);
+        EnrollNum = findViewById(R.id.enroll_num);
 
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference();
 
         State.setText(stateCheck());
 
-
+        EnrollNum.setText(String.valueOf(line.Current_Enrollment_State)+" / "+String.valueOf(line.Max_Number));
         DB = new DB_User(getApplicationContext(), "USER", null, 1);
         //DB.delete(line.Line_Name);
         User_ID = DB.get(line.Line_Name,2);
 
         //Toast.makeText(LineInfo.this,User_ID,Toast.LENGTH_LONG).show();
         if(State.getText().equals("마감")){
-            RegistBtn.setText("마감");
+            RegistBtn.setVisibility(View.INVISIBLE);
         }
         else if(User_ID==null){
             RegistBtn.setText("등록");
@@ -147,4 +150,50 @@ public class LineInfo extends AppCompatActivity {
         mDate = new Date(mNow);
         return mFormat.format(mDate);
     }
+
+    /*public void bHandler(View v){
+        switch (v.getId()){
+            case R.id.basic:
+                showBasicNotification();
+                break;
+            case R.id.expanded:
+                showExpandedlayoutNotification();
+                break;
+            case R.id.custom:
+                showCustomLayoutNotification();
+                break;
+            default:
+                break;
+        }
+    }
+    public void showExpandedlayoutNotification(){}
+    NotificationCompat.Builder mBuilder = createNotification();
+    NotificationCompat.InboxStyle inboxStyle = new android.support.v4.app.NotificationCompat.InboxStyle();
+    inboxStyle.setBigContentTitle("Event tracker details:");
+    inboxStyle.setSummaryText("Events summary");
+
+
+
+
+
+    private NotificationCompat.Builder createNotification() {
+        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setLargeIcon(icon)
+                .setContentTitle("StatusBar Title")
+                .setContentText("StatusBar subTitle")
+                .setSmallIcon(R.mipmap.ic_launcher*//*스와이프 전 아이콘*//*)
+                .setAutoCancel(true)
+                .setWhen(System.currentTimeMillis())
+                .setDefaults(Notification.DEFAULT_ALL);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            builder.setCategory(Notification.CATEGORY_MESSAGE)
+                    .setPriority(Notification.PRIORITY_HIGH)
+                    .setVisibility(Notification.VISIBILITY_PUBLIC);
+        }
+        return builder;
+
+
+    }*/
 }

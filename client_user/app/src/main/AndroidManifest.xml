@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".ListMenu" />
         <activity android:name=".LineInfo" />
-        <activity android:name=".QRactivity"></activity>
+        <activity android:name=".QRactivity" />
+        <activity android:name=".Notification"></activity>
     </application>
 
 </manifest>

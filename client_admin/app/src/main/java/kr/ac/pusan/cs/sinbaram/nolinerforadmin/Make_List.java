@@ -1,10 +1,12 @@
 package kr.ac.pusan.cs.sinbaram.nolinerforadmin;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -53,7 +55,17 @@ public class Make_List extends AppCompatActivity {
         interTime = (EditText)findViewById(R.id.intervalTime);
         maxNum = (EditText)findViewById(R.id.maxNum);
         public_id = auth.Admin_Public_ID;
+        CalendarView calendarView = (CalendarView)findViewById(R.id.Calendar);
 
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                Toast.makeText(Make_List.this, ""+year+"/"+(month+1)+"/"+dayOfMonth,Toast.LENGTH_SHORT).show();
+                YY = Integer.toString(year);
+                MM = Integer.toString(month+1);
+                DD = Integer.toString(dayOfMonth);
+            }
+        });
         mRef.child("Line List").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
