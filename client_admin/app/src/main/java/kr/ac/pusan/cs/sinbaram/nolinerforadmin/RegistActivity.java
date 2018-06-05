@@ -3,6 +3,8 @@ package kr.ac.pusan.cs.sinbaram.nolinerforadmin;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +22,7 @@ import org.w3c.dom.Text;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class RegistActivity extends AppCompatActivity {
     Button btnRegist;
@@ -89,7 +92,17 @@ public class RegistActivity extends AppCompatActivity {
 //            }
 //        });
 
-
+        final InputFilter filterAlphaNum = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                Pattern ps = Pattern.compile("^[a-zA-Z0-9]+$");
+                if(!ps.matcher(source).matches()) {
+                    //Toast.makeText(getApplicationContext(),"영문, 숫자만 입력 가능합니다." , Toast.LENGTH_SHORT).show();
+                    return "";
+                }
+                return null;
+            }
+        };
 
         btnRegist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +111,9 @@ public class RegistActivity extends AppCompatActivity {
                     Toast.makeText(RegistActivity.this, "빈칸을 채우세요.", Toast.LENGTH_LONG).show();
                     return;
                 }
+
+                EditText editAdminID=findViewById(R.id.AdminID);
+                editAdminID.setFilters(new InputFilter[]{filterAlphaNum});
 
                for(int i=0;i<Admin_Accounts.size();i++) {
                    Admin_Account tmp = Admin_Accounts.get(i);

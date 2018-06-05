@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +33,7 @@ public class Make_List extends AppCompatActivity {
     private EditText interTime;
     private EditText maxNum;
     private String public_id;
-    private String YY;
-    private String MM;
-    private String DD;
+    SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
     private List lineList = new ArrayList();
     Admin_Account auth;
     @Override
@@ -55,17 +54,10 @@ public class Make_List extends AppCompatActivity {
         interTime = (EditText)findViewById(R.id.intervalTime);
         maxNum = (EditText)findViewById(R.id.maxNum);
         public_id = auth.Admin_Public_ID;
-        CalendarView calendarView = (CalendarView)findViewById(R.id.Calendar);
 
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                Toast.makeText(Make_List.this, ""+year+"/"+(month+1)+"/"+dayOfMonth,Toast.LENGTH_SHORT).show();
-                YY = Integer.toString(year);
-                MM = Integer.toString(month+1);
-                DD = Integer.toString(dayOfMonth);
-            }
-        });
+        DatePicker openDate;
+        DatePicker closeDate;
+
         mRef.child("Line List").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -82,14 +74,45 @@ public class Make_List extends AppCompatActivity {
         });
 
 
+
+
+        final String open_year =  String.valueOf();
+        final String open_month = String.valueOf(openDate.getMonth());
+        final String open_day = String.valueOf(openDate.getDayOfMonth());
+        final String close_year =  String.valueOf(closeDate.getYear());
+        final String close_month = String.valueOf(closeDate.getMonth());
+        final String close_day = String.valueOf(closeDate.getDayOfMonth());
+
+        openDate.init(openDate.getYear(), openDate.getMonth(), openDate.getDayOfMonth(), new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            }
+        });
+
+
+        closeDate.init(closeDate.getYear(), closeDate.getMonth(), closeDate.getDayOfMonth(), new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            }
+        });
+
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String line_name = lineName.getText().toString();
-                String close_time = closeTime.getText().toString();
-                String open_time = openTime.getText().toString();
+                String close_time = close_year+"-"+close_month+"-"+close_day+" "+closeTime.getText().toString();
+                String open_time = open_year+"-"+open_month+"-"+open_day+" "+openTime.getText().toString();
                 String inter_time = interTime.getText().toString();
                 String max_nums = maxNum.getText().toString();
+
+
+                open_year =  String.valueOf(openDate.getYear());
+                open_month = String.valueOf(openDate.getMonth());
+                open_day = String.valueOf(openDate.getDayOfMonth());
+                close_year =  String.valueOf(closeDate.getYear());
+                close_month = String.valueOf(closeDate.getMonth());
+                close_day = String.valueOf(closeDate.getDayOfMonth());
 
                 if(line_name.isEmpty()||close_time.isEmpty()||open_time.isEmpty()||inter_time.isEmpty()||max_nums.isEmpty()){
                     Toast.makeText(Make_List.this,"빈칸을 채우세요.",Toast.LENGTH_LONG).show();

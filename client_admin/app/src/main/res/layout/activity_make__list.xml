@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".Make_List">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp">
 
-            <CalendarView
-                android:id="@+id/Calendar"
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -24,12 +23,50 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
+                android:text="줄 이름"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                >
+                app:layout_constraintTop_toBottomOf="parent" />
 
-            </CalendarView>
+            <EditText
+                android:id="@+id/lineName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="줄 이름을 설정하세요."
+                android:inputType="text|textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+            <TextView
+                android:id="@+id/openday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시작 일자"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/lineName" />
+
+
+
+            <TextView
+                android:id="@+id/closeday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="종료 일자"
+                android:textSize="20sp"
+                 />
+
+
 
             <EditText
                 android:id="@+id/openTime"
@@ -62,41 +99,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lineName" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:text="줄 이름"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Calendar"
-                />
-
-            <EditText
-                android:id="@+id/lineName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="줄 이름을 설정하세요."
-                android:inputType="text|textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                 />
 
             <TextView
                 android:id="@+id/textView4"
@@ -201,8 +204,8 @@
                 android:layout_marginTop="8dp"
                 android:text="등록"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.982"
-                app:layout_constraintTop_toBottomOf="@+id/intervalTime"/>
+                app:layout_constraintTop_toBottomOf="@+id/intervalTime"
+                app:layout_constraintVertical_bias="0.982" />
 
             <Button
                 android:id="@+id/btnCancel"
@@ -223,5 +226,5 @@
 
         </android.support.constraint.ConstraintLayout>
 
-    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

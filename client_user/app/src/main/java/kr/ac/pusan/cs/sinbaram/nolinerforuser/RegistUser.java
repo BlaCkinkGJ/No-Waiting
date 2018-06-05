@@ -1,6 +1,8 @@
 package kr.ac.pusan.cs.sinbaram.nolinerforuser;
 
-public class RegistUser {
+import java.io.Serializable;
+
+public class RegistUser implements Serializable {
     String User_ID ;
     String State ;
     RegistUser(){

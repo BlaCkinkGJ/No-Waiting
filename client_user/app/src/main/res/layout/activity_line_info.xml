@@ -28,7 +28,7 @@
         app:layout_constraintVertical_bias="0.612" />
 
     <TextView
-        android:id="@+id/currentnum"
+        android:id="@+id/enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -50,7 +50,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="60dp"
-        android:text="현재 입장번호"
+        android:text="입장한 인원"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,7 +105,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentnum"
+        app:layout_constraintTop_toBottomOf="@+id/enter"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView

@@ -28,7 +28,7 @@ public class UserStateList extends AppCompatActivity {
     private String Line_Name;
     FirebaseDatabase database;
     DatabaseReference mRef;
-    private List<User> userList = new ArrayList<>();
+    private List<RegistUser> userList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,13 +51,14 @@ public class UserStateList extends AppCompatActivity {
 
         //Toast.makeText(UserStateList.this, Pub_ID+" "+Line_Name, Toast.LENGTH_LONG).show();
 
-        mRef.child("Line List").child(Pub_ID).child(Line_Name).child("USER_LIST").addValueEventListener(new ValueEventListener() {
+        mRef.child("Line List").child(Pub_ID).child(Line_Name).child("USER LIST").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 userList.clear();
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    User user = snapshot.getValue(User.class);
-                    userList.add(user);
+                    RegistUser tmp = new RegistUser();
+                    tmp = snapshot.getValue(RegistUser.class);
+                    userList.add(tmp);
                 }
                 boardRecyclerViewAdater.notifyDataSetChanged();
             }
@@ -80,8 +81,8 @@ public class UserStateList extends AppCompatActivity {
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position){
             ((CustomViewHolder)holder).count.setText(String.valueOf(position+1));
-            ((CustomViewHolder)holder).userId.setText(userList.get(position).User_ID);
-            ((CustomViewHolder)holder).userState.setText(userList.get(position).User_State);
+            ((CustomViewHolder)holder).userId.setText(userList.get(position).User_ID.substring(0, 20));
+            ((CustomViewHolder)holder).userState.setText(userList.get(position).State);
 
         }
         @Override

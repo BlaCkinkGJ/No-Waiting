@@ -3,7 +3,6 @@ package kr.ac.pusan.cs.sinbaram.nolinerforuser;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,7 +16,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import kr.ac.pusan.cs.sinbaram.nolinerforuser.DB.DB_User;
 import kr.ac.pusan.cs.sinbaram.nolinerforuser.RSA.RSA;
@@ -29,9 +30,10 @@ public class LineInfo extends AppCompatActivity {
     private TextView LineName;
     private TextView State;
     private TextView EnrollNum;
+    private TextView EnterNum;
     private Line line;
     private String Public_ID;
-
+    List<String> user_ids;
     private Button RegistBtn;
     FirebaseDatabase database;
     DatabaseReference mRef;
@@ -44,71 +46,117 @@ public class LineInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_line_info);
-
         Intent intent = getIntent();
-        line = (Line) intent.getSerializableExtra("line");
+        line = (Line)intent.getSerializableExtra("line");
         Public_ID = intent.getStringExtra("pubID");
         PubID = findViewById(R.id.pubID);
         LineName = findViewById(R.id.lineName);
         State = findViewById(R.id.state);
+        EnterNum = findViewById(R.id.enter);
         PubID.setText(Public_ID);
         LineName.setText(line.Line_Name);
         RegistBtn = findViewById(R.id.registbtn);
         EnrollNum = findViewById(R.id.enroll_num);
-
+        user_ids = new ArrayList<>();
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference();
 
         State.setText(stateCheck());
 
-        EnrollNum.setText(String.valueOf(line.Current_Enrollment_State)+" / "+String.valueOf(line.Max_Number));
+
         DB = new DB_User(getApplicationContext(), "USER", null, 1);
         //DB.delete(line.Line_Name);
-        User_ID = DB.get(line.Line_Name,2);
+        //User_ID = DB.get(line.Line_Name,2);
+
+        mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("INFO").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                line = dataSnapshot.getValue(Line.class);
+                if(State.getText().equals("마감")){
+                    RegistBtn.setVisibility(View.INVISIBLE);
+                }
+                EnrollNum.setText(String.valueOf(line.Current_Enrollment_State)+" / "+String.valueOf(line.Max_Number));
+                if(DB.get(line.Line_Name, DB.LIST_NAME)== null) {
+                    User_ID = null;
+                    RegistBtn.setText("등록");
+                }else{
+                    RegistBtn.setText("불러오기");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("USER LIST").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int count=0;
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    RegistUser tmp = new RegistUser();
+                    tmp = snapshot.getValue(RegistUser.class);
+                    if((tmp.State).equals("Check"))count++;
+                }
+                EnterNum.setText(String.valueOf(count));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         //Toast.makeText(LineInfo.this,User_ID,Toast.LENGTH_LONG).show();
-        if(State.getText().equals("마감")){
-            RegistBtn.setVisibility(View.INVISIBLE);
-        }
-        else if(User_ID==null){
-            RegistBtn.setText("등록");
-        }else{
-            RegistBtn.setText("불러오기");
 
-        }
         RegistBtn.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 String time = getTime();
-                if(RegistBtn.getText().equals("등록")){
+
+                if(DB.get(line.Line_Name,2)==null){
+                    RegistBtn.setText("불러오기");
                     try {
                         RSA rsa = new RSA();
                         rsa.setPublicKey(line.Public_Key);
-                        rsa.setBuffer(time);
+                        rsa.setBuffer(time+String.valueOf(line.Current_Enrollment_State));
                         User_ID = rsa.encryption();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+
                     //Toast.makeText(LineInfo.this,User_ID,Toast.LENGTH_LONG).show();
                     String[] values = new String[3];
                     values[0] = line.Line_Name;
                     values[1] = User_ID;
                     values[2] = time;
                     DB.insert(values);
-
-                    mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("INFO").child("Current_Enrollment_State").setValue(line.Current_Enrollment_State+1);
+                    //line.Current_Enrollment_State = line.Current_Enrollment_State+1;
                     RegistUser registUser = new RegistUser();
-                    registUser.make(User_ID,"wait");
+                    registUser.make(DB.get(line.Line_Name,2),"wait");
+                    line.Current_Enrollment_State++;
+                    mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("INFO").setValue(line);
                     mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("USER LIST").push().setValue(registUser);
-                    RegistBtn.setText("불러오기");
-                }else{
                     Intent intent1 = new Intent(LineInfo.this,QRactivity.class);
-                    intent1.putExtra("userID",User_ID);
+                    intent1.putExtra("regist",registUser);
+                    intent1.putExtra("userID",DB.get(line.Line_Name,2));
                     intent1.putExtra("pubID",Public_ID);
                     intent1.putExtra("line",line);
+                    intent1.putExtra("state","insert");
+                    intent1.putExtra("lineName",line.Line_Name);
+                    Toast.makeText(LineInfo.this,"등록되었습니다.",Toast.LENGTH_LONG).show();
+                    startActivity(intent1);
+
+                }else{
+                    Intent intent1 = new Intent(LineInfo.this,QRactivity.class);
+                    intent1.putExtra("userID",DB.get(line.Line_Name,2));
+                    intent1.putExtra("pubID",Public_ID);
+                    intent1.putExtra("line",line);
+                    intent1.putExtra("state","no");
                     intent1.putExtra("lineName",line.Line_Name);
                     startActivity(intent1);
+
                 }
             }
         });
@@ -151,49 +199,46 @@ public class LineInfo extends AppCompatActivity {
         return mFormat.format(mDate);
     }
 
-    /*public void bHandler(View v){
-        switch (v.getId()){
-            case R.id.basic:
-                showBasicNotification();
-                break;
-            case R.id.expanded:
-                showExpandedlayoutNotification();
-                break;
-            case R.id.custom:
-                showCustomLayoutNotification();
-                break;
-            default:
-                break;
-        }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("INFO").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                line = dataSnapshot.getValue(Line.class);
+                EnrollNum.setText(String.valueOf(line.Current_Enrollment_State)+" / "+String.valueOf(line.Max_Number));
+                if(DB.get(line.Line_Name, DB.LIST_NAME)== null) {
+                    User_ID = null;
+                    RegistBtn.setText("등록");
+                }else{
+                    RegistBtn.setText("불러오기");
+                }
+                if(State.getText().equals("마감")){
+                    RegistBtn.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("USER LIST").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int count=0;
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    RegistUser tmp = new RegistUser();
+                    tmp = snapshot.getValue(RegistUser.class);
+                    if((tmp.State).equals("Check"))count++;
+                }
+                EnterNum.setText(String.valueOf(count));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
-    public void showExpandedlayoutNotification(){}
-    NotificationCompat.Builder mBuilder = createNotification();
-    NotificationCompat.InboxStyle inboxStyle = new android.support.v4.app.NotificationCompat.InboxStyle();
-    inboxStyle.setBigContentTitle("Event tracker details:");
-    inboxStyle.setSummaryText("Events summary");
-
-
-
-
-
-    private NotificationCompat.Builder createNotification() {
-        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(icon)
-                .setContentTitle("StatusBar Title")
-                .setContentText("StatusBar subTitle")
-                .setSmallIcon(R.mipmap.ic_launcher*//*스와이프 전 아이콘*//*)
-                .setAutoCancel(true)
-                .setWhen(System.currentTimeMillis())
-                .setDefaults(Notification.DEFAULT_ALL);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            builder.setCategory(Notification.CATEGORY_MESSAGE)
-                    .setPriority(Notification.PRIORITY_HIGH)
-                    .setVisibility(Notification.VISIBILITY_PUBLIC);
-        }
-        return builder;
-
-
-    }*/
 }

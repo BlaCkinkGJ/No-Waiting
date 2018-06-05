@@ -3,7 +3,6 @@ package kr.ac.pusan.cs.sinbaram.nolinerforuser;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,11 +20,8 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import kr.ac.pusan.cs.sinbaram.nolinerforuser.DB.DB_User;
 
@@ -56,6 +52,8 @@ public class QRactivity extends AppCompatActivity {
         line_Name = intent.getStringExtra("lineName");
         public_ID = intent.getStringExtra("pubID");
         line = (Line)intent.getSerializableExtra("line");
+        RegistUser registUser = (RegistUser)intent.getSerializableExtra("regist");
+
         generateRQCode(User_ID);
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference();
@@ -64,7 +62,7 @@ public class QRactivity extends AppCompatActivity {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mRef.child("Line List").child(public_ID).child(line.Line_Name).child("USER LIST").addValueEventListener(new ValueEventListener() {
+                mRef.child("Line List").child(public_ID).child(line.Line_Name).child("USER LIST").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         String key = null;
@@ -77,9 +75,11 @@ public class QRactivity extends AppCompatActivity {
 
                         }
                         //Toast.makeText(QRactivity.this,DB.get(line_Name,2),Toast.LENGTH_LONG).show();
-                        //DB.delete(line_Name);
-                        //mRef.child("Line LIst").child(public_ID).child(line_Name).child("USER LIST").child(key).setValue(null);
-                        //mRef.child("Line LIst").child(public_ID).child(line_Name).child("INFO").child("Current_Enrollment_State").setValue(String.valueOf(line.Current_Enrollment_State-1));
+                        if(key != null) {
+                            DB.delete(line_Name);
+                            mRef.child("Line List").child(public_ID).child(line_Name).child("USER LIST").child(key).setValue(null);
+                            mRef.child("Line List").child(public_ID).child(line_Name).child("INFO").child("Current_Enrollment_State").setValue(line.Current_Enrollment_State - 1);
+                        }
                     }
 
                     @Override
@@ -87,6 +87,8 @@ public class QRactivity extends AppCompatActivity {
 
                     }
                 });
+                //line.Current_Enrollment_State--;
+                Toast.makeText(QRactivity.this,"취소되었습니다.",Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -96,7 +98,7 @@ public class QRactivity extends AppCompatActivity {
     public void generateRQCode(String contents){
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         try{
-            Bitmap bitmap = toBitmap(qrCodeWriter.encode(contents, BarcodeFormat.QR_CODE,500,500));
+            Bitmap bitmap = toBitmap(qrCodeWriter.encode(contents, BarcodeFormat.QR_CODE,800,800));
             qrcodeImg.setImageBitmap(bitmap);
         }catch(WriterException e){
             e.printStackTrace();

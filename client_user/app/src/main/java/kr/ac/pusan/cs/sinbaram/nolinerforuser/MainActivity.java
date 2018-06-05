@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                         Intent intent = new Intent(MainActivity.this, ListMenu.class);
-                        intent.putExtra("Pub_ID", arraylist.get(position));
+                        intent.putExtra("Pub_ID", list.get(position));
                         startActivity(intent);
                         //Toast.makeText(MainActivity.this, arraylist.get(position), Toast.LENGTH_LONG).show();
                     }
