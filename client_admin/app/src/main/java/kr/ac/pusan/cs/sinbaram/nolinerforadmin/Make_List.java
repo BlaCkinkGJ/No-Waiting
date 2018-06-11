@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.text.ParseException;
+import java.util.Date;
+
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,6 +32,8 @@ import java.util.Date;
 import java.util.List;
 
 import kr.ac.pusan.cs.sinbaram.nolinerforadmin.RSA.RSA;
+
+import static java.lang.String.valueOf;
 
 public class Make_List extends AppCompatActivity {
     FirebaseDatabase database;
@@ -89,13 +94,7 @@ public class Make_List extends AppCompatActivity {
         maxNum = (EditText)findViewById(R.id.maxNum);
         public_id = auth.Admin_Public_ID;
 
-        /*calendar = Calendar.getInstance();
-        openyear = calendar.get(Calendar.YEAR);
-        closeyear = calendar.get(Calendar.YEAR);
-        openmonth = calendar.get(Calendar.MONTH);
-        closemonth = calendar.get(Calendar.MONTH);
-        openday = calendar.get(Calendar.DAY_OF_MONTH);
-        closeday = calendar.get(Calendar.DAY_OF_MONTH);*/
+
 
         mRef.child("Line List").addValueEventListener(new ValueEventListener() {
             @Override
@@ -147,10 +146,27 @@ public class Make_List extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String line_name = lineName.getText().toString();
-                String close_time = closeTime.getText().toString();
-                String open_time = openTime.getText().toString();
+
                 String inter_time = interTime.getText().toString();
                 String max_nums = maxNum.getText().toString();
+                Date date1=null;
+                Date date2 = null;
+
+                try {
+                    date1 = mFormat.parse(valueOf(strCloseDate+" "+strCloseTime));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    date2 = mFormat.parse(valueOf(strOpenDate+" "+ strOpenTime));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                if(!date2.after(date1)){
+                    Toast.makeText(Make_List.this,"시간을 다시 설정하세요.",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
 
                 if(line_name.isEmpty()||strOpenTime.isEmpty()||strCloseTime.isEmpty()||inter_time.isEmpty()||max_nums.isEmpty()||strOpenDate.isEmpty()||strCloseDate.isEmpty()){
                     Toast.makeText(Make_List.this,"빈칸을 채우세요.",Toast.LENGTH_LONG).show();
@@ -213,12 +229,12 @@ public class Make_List extends AppCompatActivity {
                                         openday=dayOfMonth;
                                         opentxt.setText(openyear+". "+openmonth+". "+openday);
                                         String strmonth,strday;
-                                        if(openmonth<10)strmonth = "0"+String.valueOf(openmonth);
-                                        else strmonth = String.valueOf(openmonth);
-                                        if(openday<10)strday = "0"+String.valueOf(openday);
-                                        else strday = String.valueOf(openday);
+                                        if(openmonth<10)strmonth = "0"+ valueOf(openmonth);
+                                        else strmonth = valueOf(openmonth);
+                                        if(openday<10)strday = "0"+ valueOf(openday);
+                                        else strday = valueOf(openday);
 
-                                        strOpenDate=String.valueOf(openyear)+"-"+strmonth+"-"+strday;
+                                        strOpenDate= valueOf(openyear)+"-"+strmonth+"-"+strday;
 
                                     }
                                 }
@@ -237,12 +253,12 @@ public class Make_List extends AppCompatActivity {
                                         closeday=dayOfMonth;
                                         closetxt.setText(closeyear+". "+closemonth+". "+closeday);
                                         String strmonth,strday;
-                                        if(closemonth<10)strmonth = "0"+String.valueOf(closemonth);
-                                        else strmonth = String.valueOf(closemonth);
-                                        if(closeday<10)strday = "0"+String.valueOf(closeday);
-                                        else strday = String.valueOf(closeday);
+                                        if(closemonth<10)strmonth = "0"+ valueOf(closemonth);
+                                        else strmonth = valueOf(closemonth);
+                                        if(closeday<10)strday = "0"+ valueOf(closeday);
+                                        else strday = valueOf(closeday);
 
-                                        strCloseDate=String.valueOf(closeyear)+"-"+strmonth+"-"+strday;
+                                        strCloseDate= valueOf(closeyear)+"-"+strmonth+"-"+strday;
 
 
                                     }
@@ -264,10 +280,10 @@ public class Make_List extends AppCompatActivity {
                                             hourOfDay +"시 " + minute+"분 을 선택했습니다",
                                             Toast.LENGTH_SHORT).show();
                                     String strhour,strmin;
-                                    if(hourOfDay<10)strhour = "0"+String.valueOf(hourOfDay);
-                                    else strhour = String.valueOf(hourOfDay);
-                                    if(minute<10)strmin = "0"+String.valueOf(minute);
-                                    else strmin = String.valueOf(minute);
+                                    if(hourOfDay<10)strhour = "0"+ valueOf(hourOfDay);
+                                    else strhour = valueOf(hourOfDay);
+                                    if(minute<10)strmin = "0"+ valueOf(minute);
+                                    else strmin = valueOf(minute);
                                     strOpenTime =strhour + ":"+strmin;
                                     opentimetxt.setText(strOpenTime);
                                 }
@@ -285,12 +301,12 @@ public class Make_List extends AppCompatActivity {
                             public void onTimeSet(TimePicker view,
                                                   int hourOfDay, int minute) {
                                 String strhour,strmin;
-                                if(hourOfDay<10)strhour = "0"+String.valueOf(hourOfDay);
-                                else strhour = String.valueOf(hourOfDay);
-                                if(minute<10)strmin = "0"+String.valueOf(minute);
-                                else strmin = String.valueOf(minute);
+                                if(hourOfDay<10)strhour = "0"+ valueOf(hourOfDay);
+                                else strhour = valueOf(hourOfDay);
+                                if(minute<10)strmin = "0"+ valueOf(minute);
+                                else strmin = valueOf(minute);
                                 strCloseTime = strhour + ":"+strmin;
-                                opentimetxt.setText(strCloseTime);
+                                closetimetxt.setText(strCloseTime);
                             }
                         }, // 값설정시 호출될 리스너 등록
                         4,19, false); // 기본값 시분 등록
