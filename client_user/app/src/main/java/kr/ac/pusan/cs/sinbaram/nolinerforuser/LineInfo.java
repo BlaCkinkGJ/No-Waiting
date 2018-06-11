@@ -94,8 +94,8 @@ public class LineInfo extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int count=0;
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    RegistUser tmp = new RegistUser();
-                    tmp = snapshot.getValue(RegistUser.class);
+                    User tmp = new User();
+                    tmp = snapshot.getValue(User.class);
                     if((tmp.State).equals("Check"))count++;
                 }
                 EnterNum.setText(String.valueOf(count));
@@ -133,13 +133,13 @@ public class LineInfo extends AppCompatActivity {
                     values[2] = time;
                     DB.insert(values);
                     //line.Current_Enrollment_State = line.Current_Enrollment_State+1;
-                    RegistUser registUser = new RegistUser();
-                    registUser.make(DB.get(line.Line_Name,2),"wait");
+                    User user = new User();
+                    user.make(DB.get(line.Line_Name,2),"wait");
                     line.Current_Enrollment_State++;
                     mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("INFO").setValue(line);
-                    mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("USER LIST").push().setValue(registUser);
+                    mRef.child("Line List").child(Public_ID).child(line.Line_Name).child("USER LIST").push().setValue(user);
                     Intent intent1 = new Intent(LineInfo.this,QRactivity.class);
-                    intent1.putExtra("regist",registUser);
+                    intent1.putExtra("regist", user);
                     intent1.putExtra("userID",DB.get(line.Line_Name,2));
                     intent1.putExtra("pubID",Public_ID);
                     intent1.putExtra("line",line);
@@ -228,8 +228,8 @@ public class LineInfo extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int count=0;
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    RegistUser tmp = new RegistUser();
-                    tmp = snapshot.getValue(RegistUser.class);
+                    User tmp = new User();
+                    tmp = snapshot.getValue(User.class);
                     if((tmp.State).equals("Check"))count++;
                 }
                 EnterNum.setText(String.valueOf(count));

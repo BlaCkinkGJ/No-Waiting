@@ -2,15 +2,18 @@ package kr.ac.pusan.cs.sinbaram.nolinerforadmin;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -30,22 +33,33 @@ import kr.ac.pusan.cs.sinbaram.nolinerforadmin.RSA.RSA;
 public class Make_List extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference mRef;
+    final int OpenDate = 1;
+    final int OpenTime = 3;
+    final int CloseDate = 2;
+    final int CloseTime = 4;
     private Button btnCancel;
     private Button btnRegister;
     private Button btnOpen;
     private Button btnClose;
-    private DatePicker datePicker;
-    private Calendar calendar;
+    private Button btnOpenTime;
+    private Button btnCloseTime;
+    //private Calendar calendar;
     private EditText lineName;
     private EditText closeTime;
     private EditText openTime;
     private EditText interTime;
     private TextView opentxt;
+    private TextView opentimetxt;
     private TextView closetxt;
+    private TextView closetimetxt;
     private EditText maxNum;
     private String public_id;
     private int openyear, openmonth, openday;
     private int closeyear, closemonth, closeday;
+    private String strOpenTime;
+    private String strCloseTime;
+    private String strOpenDate;
+    private String strCloseDate;
     SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
     private List lineList = new ArrayList();
     Admin_Account auth;
@@ -53,32 +67,35 @@ public class Make_List extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make__list);
-        calendar = Calendar.getInstance();
+        //calendar = Calendar.getInstance();
         btnCancel = (Button)findViewById(R.id.btnCancel);
         btnRegister = (Button)findViewById(R.id.btnRegister);
         btnOpen = findViewById(R.id.openBtn);
         btnClose = findViewById(R.id.closeBtn);
         opentxt = findViewById(R.id.opentxt);
         closetxt = findViewById(R.id.closetxt);
+        btnCloseTime = findViewById(R.id.closetimebtn);
+        btnOpenTime = findViewById(R.id.opentimebtn);
+        opentimetxt = findViewById(R.id.opentimetxt);
+        closetimetxt = findViewById(R.id.closetimetxt);
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference();
         Intent intent = getIntent();
         auth = (Admin_Account) intent.getSerializableExtra("DB_Admin");
 
         lineName = (EditText) findViewById(R.id.lineName);
-        closeTime = (EditText)findViewById(R.id.closeTime);
-        openTime = (EditText)findViewById(R.id.openTime);
+
         interTime = (EditText)findViewById(R.id.intervalTime);
         maxNum = (EditText)findViewById(R.id.maxNum);
         public_id = auth.Admin_Public_ID;
 
-        calendar = Calendar.getInstance();
+        /*calendar = Calendar.getInstance();
         openyear = calendar.get(Calendar.YEAR);
         closeyear = calendar.get(Calendar.YEAR);
         openmonth = calendar.get(Calendar.MONTH);
         closemonth = calendar.get(Calendar.MONTH);
         openday = calendar.get(Calendar.DAY_OF_MONTH);
-        closeday = calendar.get(Calendar.DAY_OF_MONTH);
+        closeday = calendar.get(Calendar.DAY_OF_MONTH);*/
 
         mRef.child("Line List").addValueEventListener(new ValueEventListener() {
             @Override
@@ -95,8 +112,30 @@ public class Make_List extends AppCompatActivity {
             }
         });
 
-
-
+        btnOpen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog(OpenDate);
+            }
+        });
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog(CloseDate);
+            }
+        });
+        btnOpenTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog(OpenTime);
+            }
+        });
+        btnOpenTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog(CloseTime);
+            }
+        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +146,7 @@ public class Make_List extends AppCompatActivity {
                 String inter_time = interTime.getText().toString();
                 String max_nums = maxNum.getText().toString();
 
-                if(line_name.isEmpty()||close_time.isEmpty()||open_time.isEmpty()||inter_time.isEmpty()||max_nums.isEmpty()){
+                if(line_name.isEmpty()||strOpenTime.isEmpty()||strCloseTime.isEmpty()||inter_time.isEmpty()||max_nums.isEmpty()||strOpenDate.isEmpty()||strCloseDate.isEmpty()){
                     Toast.makeText(Make_List.this,"빈칸을 채우세요.",Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -131,8 +170,8 @@ public class Make_List extends AppCompatActivity {
                     line.Public_Key = rsa.getPublicKey();
                     line.Line_Name = line_name;
                     line.Max_Number = max_num;
-                    line.Closing_Time = close_time;
-                    line.Opening_Time = open_time;
+                    line.Closing_Time = strCloseDate+" "+close_time;
+                    line.Opening_Time = strOpenDate+" "+ open_time;
                     line.Personal_Interval = inter_time;
                     line.Current_Enrollment_State = 0;
 
@@ -152,45 +191,116 @@ public class Make_List extends AppCompatActivity {
             }
         });
     }
-    @SuppressWarnings("deprecation")
-    public void openDate(View view) {
-        showDialog(998);
-        opentxt.setText(String.valueOf(openyear)+"/"+String.valueOf(openmonth+1)+"/"+String.valueOf(openday));
 
-    }
-    @SuppressWarnings("deprecation")
-    public void closeDate(View view) {
-        showDialog(999);
-        closetxt.setText(String.valueOf(closeyear)+"/"+String.valueOf(closemonth+1)+"/"+String.valueOf(closeday));
-    }
     @Override
+    @Deprecated
     protected Dialog onCreateDialog(int id) {
-        // TODO Auto-generated method stub
-        if (id == 999) {
-            return new DatePickerDialog(this,
-                    myDateListener, openyear, openmonth, openday);
-        }
-        if (id == 998) {
-            return new DatePickerDialog(this,
-                    myDateListener, closeyear, closemonth, closeday);
-        }
-        return null;
+        switch(id){
+            case OpenDate :
+                DatePickerDialog dpd = new DatePickerDialog
+                        (Make_List.this, // 현재화면의 제어권자
+                                new DatePickerDialog.OnDateSetListener() {
+                                    public void onDateSet(DatePicker view,
+                                                          int year, int monthOfYear,int dayOfMonth) {
+                                        openyear=year;
+                                        openmonth=monthOfYear+1;
+                                        openday=dayOfMonth;
+                                        opentxt.setText(openyear+". "+openmonth+". "+openday);
+                                        String strmonth,strday;
+                                        if(openmonth<10)strmonth = "0"+String.valueOf(openmonth);
+                                        else strmonth = String.valueOf(openmonth);
+                                        if(openday<10)strday = "0"+String.valueOf(openday);
+                                        else strday = String.valueOf(openday);
+
+                                        strOpenDate=String.valueOf(openyear)+"-"+strmonth+"-"+strday;
+
+                                    }
+                                }
+                                , // 사용자가 날짜설정 후 다이얼로그 빠져나올때
+                                //    호출할 리스너 등록
+                                2018, 5, 21); // 기본값 연월일
+                return dpd;
+            case CloseDate :
+                DatePickerDialog dpd2 = new DatePickerDialog
+                        (Make_List.this, // 현재화면의 제어권자
+                                new DatePickerDialog.OnDateSetListener() {
+                                    public void onDateSet(DatePicker view,
+                                                          int year, int monthOfYear,int dayOfMonth) {
+                                        closeyear=year;
+                                        closemonth=monthOfYear+1;
+                                        closeday=dayOfMonth;
+                                        closetxt.setText(closeyear+". "+closemonth+". "+closeday);
+                                        String strmonth,strday;
+                                        if(closemonth<10)strmonth = "0"+String.valueOf(closemonth);
+                                        else strmonth = String.valueOf(closemonth);
+                                        if(closeday<10)strday = "0"+String.valueOf(closeday);
+                                        else strday = String.valueOf(closeday);
+
+                                        strCloseDate=String.valueOf(closeyear)+"-"+strmonth+"-"+strday;
+
+
+                                    }
+                                }
+                                , // 사용자가 날짜설정 후 다이얼로그 빠져나올때
+                                //    호출할 리스너 등록
+                                2018, 5, 21); // 기본값 연월일
+                return dpd2;
+
+
+            case OpenTime :
+            TimePickerDialog tpd =
+                    new TimePickerDialog(Make_List.this,
+                            new TimePickerDialog.OnTimeSetListener() {
+                                @Override
+                                public void onTimeSet(TimePicker view,
+                                                      int hourOfDay, int minute) {
+                                    Toast.makeText(getApplicationContext(),
+                                            hourOfDay +"시 " + minute+"분 을 선택했습니다",
+                                            Toast.LENGTH_SHORT).show();
+                                    String strhour,strmin;
+                                    if(hourOfDay<10)strhour = "0"+String.valueOf(hourOfDay);
+                                    else strhour = String.valueOf(hourOfDay);
+                                    if(minute<10)strmin = "0"+String.valueOf(minute);
+                                    else strmin = String.valueOf(minute);
+                                    strOpenTime =strhour + ":"+strmin;
+                                    opentimetxt.setText(strOpenTime);
+                                }
+                            }, // 값설정시 호출될 리스너 등록
+                            4,19, false); // 기본값 시분 등록
+            // true : 24 시간(0~23) 표시
+            // false : 오전/오후 항목이 생김
+            return tpd;
+
+        case CloseTime :
+        TimePickerDialog tpd2 =
+                new TimePickerDialog(Make_List.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view,
+                                                  int hourOfDay, int minute) {
+                                String strhour,strmin;
+                                if(hourOfDay<10)strhour = "0"+String.valueOf(hourOfDay);
+                                else strhour = String.valueOf(hourOfDay);
+                                if(minute<10)strmin = "0"+String.valueOf(minute);
+                                else strmin = String.valueOf(minute);
+                                strCloseTime = strhour + ":"+strmin;
+                                opentimetxt.setText(strCloseTime);
+                            }
+                        }, // 값설정시 호출될 리스너 등록
+                        4,19, false); // 기본값 시분 등록
+        // true : 24 시간(0~23) 표시
+        // false : 오전/오후 항목이 생김
+            return tpd2;
     }
 
-    private DatePickerDialog.OnDateSetListener myDateListener = new
-            DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker arg0,
-                                      int arg1, int arg2, int arg3) {
-                    // TODO Auto-generated method stub
-                    // arg1 = year
-                    // arg2 = month
-                    // arg3 = day
-                    //showDate(arg1, arg2+1, arg3);
-                    Toast.makeText(getApplicationContext(), String.valueOf(arg1)+"/"+String.valueOf(arg2+1)+"/"+String.valueOf(arg3),
-                            Toast.LENGTH_SHORT)
-                            .show();
-                }
-            };
+
+
+
+
+        return super.onCreateDialog(id);
+    }
+
+
+
 
 }

@@ -1,7 +1,6 @@
 package kr.ac.pusan.cs.sinbaram.nolinerforadmin;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,9 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +25,7 @@ public class UserStateList extends AppCompatActivity {
     private String Line_Name;
     FirebaseDatabase database;
     DatabaseReference mRef;
-    private List<RegistUser> userList = new ArrayList<>();
+    private List<User> userList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +53,8 @@ public class UserStateList extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 userList.clear();
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    RegistUser tmp = new RegistUser();
-                    tmp = snapshot.getValue(RegistUser.class);
+                    User tmp = new User();
+                    tmp = snapshot.getValue(User.class);
                     userList.add(tmp);
                 }
                 boardRecyclerViewAdater.notifyDataSetChanged();

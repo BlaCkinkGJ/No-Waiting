@@ -8,8 +8,9 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="350dp"
+        android:layout_width="369dp"
         android:layout_height="504dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
@@ -47,22 +48,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 
-        <EditText
-            android:id="@+id/openTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:inputType="time"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -86,28 +71,11 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
             android:text="Closing Time"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/openTime" />
-
-        <EditText
-            android:id="@+id/closeTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="time"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            tools:layout_editor_absoluteY="180dp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -117,12 +85,11 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
             android:text="최대인원"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/closeTime" />
+            tools:layout_editor_absoluteY="264dp" />
 
         <EditText
             android:id="@+id/maxNum"
@@ -205,33 +172,37 @@
             android:id="@+id/openBtn"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginBottom="36dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:onClick="openDate"
-            android:text="오픈 날짜"
-            app:layout_constraintBottom_toTopOf="@+id/closeBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/openTime"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <Button
-            android:id="@+id/closeBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:onClick="openDate"
+            android:layout_marginTop="8dp"
+            android:text="오픈 날짜"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.384" />
+
+        <Button
+            android:id="@+id/closeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="272dp"
+            android:layout_marginLeft="8dp"
+
+            android:layout_marginRight="272dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="마감 날짜"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/closeTime" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
             android:id="@+id/opentxt"
@@ -243,10 +214,10 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/openBtn"
-            app:layout_constraintEnd_toEndOf="@+id/openBtn"
-            app:layout_constraintStart_toStartOf="@+id/openBtn"
-            app:layout_constraintTop_toBottomOf="@+id/lineName" />
+            app:layout_constraintBottom_toBottomOf="@+id/openBtn"
+            app:layout_constraintEnd_toStartOf="@+id/opentimebtn"
+            app:layout_constraintStart_toEndOf="@+id/openBtn"
+            app:layout_constraintTop_toTopOf="@+id/openBtn" />
 
         <TextView
             android:id="@+id/closetxt"
@@ -254,14 +225,79 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/closeBtn"
-            app:layout_constraintEnd_toEndOf="@+id/closeBtn"
-            app:layout_constraintStart_toStartOf="@+id/closeBtn"
-            app:layout_constraintTop_toBottomOf="@+id/openTime" />
+            app:layout_constraintBottom_toBottomOf="@+id/closeBtn"
+            app:layout_constraintEnd_toStartOf="@+id/closetimebtn"
+            app:layout_constraintStart_toEndOf="@+id/closeBtn"
+            app:layout_constraintTop_toTopOf="@+id/closeBtn" />
+
+        <Button
+            android:id="@+id/opentimebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="시간"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/closetimebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="시간"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.333" />
+
+        <TextView
+            android:id="@+id/opentimetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/opentimebtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/opentimebtn"
+            app:layout_constraintTop_toTopOf="@+id/opentimebtn" />
+
+        <TextView
+            android:id="@+id/closetimetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/closetimebtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/closetimebtn"
+            app:layout_constraintTop_toTopOf="@+id/closetimebtn" />
 
     </android.support.constraint.ConstraintLayout>
 

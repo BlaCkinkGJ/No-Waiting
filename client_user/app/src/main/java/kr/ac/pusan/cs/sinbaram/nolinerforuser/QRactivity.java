@@ -52,7 +52,7 @@ public class QRactivity extends AppCompatActivity {
         line_Name = intent.getStringExtra("lineName");
         public_ID = intent.getStringExtra("pubID");
         line = (Line)intent.getSerializableExtra("line");
-        RegistUser registUser = (RegistUser)intent.getSerializableExtra("regist");
+        User user = (User)intent.getSerializableExtra("regist");
 
         generateRQCode(User_ID);
         database = FirebaseDatabase.getInstance();
@@ -67,8 +67,8 @@ public class QRactivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         String key = null;
                         for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                            RegistUser tmp = new RegistUser();
-                            tmp = snapshot.getValue(RegistUser.class);
+                            User tmp = new User();
+                            tmp = snapshot.getValue(User.class);
                             if(tmp.User_ID.equals(User_ID)){
                                 key = snapshot.getKey();
                             }

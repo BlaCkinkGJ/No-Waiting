@@ -1,7 +1,16 @@
 package kr.ac.pusan.cs.sinbaram.nolinerforuser;
 
-public class User {
-    public String User_ID;
-    public String User_Password;
-    public String User_State;
+import java.io.Serializable;
+
+public class User implements Serializable {
+    String User_ID ;
+    String State ;
+    User(){
+
+    }
+
+    public void make(String ID, String State) {
+        this.User_ID = ID ;
+        this.State = State;
+    }
 }
