@@ -133,6 +133,12 @@ public class Make_List extends AppCompatActivity {
         btnOpenTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                showDialog(OpenTime);
+            }
+        });
+        btnCloseTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 showDialog(CloseTime);
             }
         });
