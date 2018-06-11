@@ -170,8 +170,8 @@ public class Make_List extends AppCompatActivity {
                     line.Public_Key = rsa.getPublicKey();
                     line.Line_Name = line_name;
                     line.Max_Number = max_num;
-                    line.Closing_Time = strCloseDate+" "+close_time;
-                    line.Opening_Time = strOpenDate+" "+ open_time;
+                    line.Closing_Time = strCloseDate+" "+strCloseTime;
+                    line.Opening_Time = strOpenDate+" "+ strOpenTime;
                     line.Personal_Interval = inter_time;
                     line.Current_Enrollment_State = 0;
 
