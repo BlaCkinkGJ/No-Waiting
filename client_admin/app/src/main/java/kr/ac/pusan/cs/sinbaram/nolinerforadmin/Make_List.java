@@ -162,10 +162,10 @@ public class Make_List extends AppCompatActivity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                if(!date2.after(date1)){
+                /*if(!date2.after(date1)){
                     Toast.makeText(Make_List.this,"시간을 다시 설정하세요.",Toast.LENGTH_LONG).show();
                     return;
-                }
+                }*/
 
 
                 if(line_name.isEmpty()||strOpenTime.isEmpty()||strCloseTime.isEmpty()||inter_time.isEmpty()||max_nums.isEmpty()||strOpenDate.isEmpty()||strCloseDate.isEmpty()){
@@ -276,9 +276,9 @@ public class Make_List extends AppCompatActivity {
                                 @Override
                                 public void onTimeSet(TimePicker view,
                                                       int hourOfDay, int minute) {
-                                    Toast.makeText(getApplicationContext(),
+                                    /*Toast.makeText(getApplicationContext(),
                                             hourOfDay +"시 " + minute+"분 을 선택했습니다",
-                                            Toast.LENGTH_SHORT).show();
+                                            Toast.LENGTH_SHORT).show();*/
                                     String strhour,strmin;
                                     if(hourOfDay<10)strhour = "0"+ valueOf(hourOfDay);
                                     else strhour = valueOf(hourOfDay);
