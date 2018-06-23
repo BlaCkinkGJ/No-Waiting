@@ -47,8 +47,6 @@ if FB == None:
     sys.exit(0)
 publicID = str(question("공개 ID 를 입력해주세요").encode('utf-8')) #"유가네 갈비"
 listName = str(question("리스트 이름를 입력해주세요").encode('utf-8')) #"list03"
-publicID = "sample"
-listName = "line2"
 getData = FB.getChild("Line List") \
             .child(publicID)\
             .child(listName)\
