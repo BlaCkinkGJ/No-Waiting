@@ -55,7 +55,6 @@ getData = FB.getChild("Line List") \
 if getData == None:
     print "Cannot load data from database"
     sys.exit(0)
-
 AdminID = str(question("개인 ID를 입력해주세요"))
 getData = str(getData)
 
@@ -64,8 +63,8 @@ if getData != AdminID:
     sys.exit(0)
 
 print "========= start camera ============"
-QR = camera.QRScan()
 
+QR = camera.QRScan()
 print "QR start"
 while True:
     try:
@@ -73,6 +72,7 @@ while True:
         QR.image_from_camera()
         value = QR.scanning() # scan from the user QR
         if(value):
+            print "Recoginze the data : " + value
             list_data = FB.getChild("Line List") \
                           .child(publicID)\
                           .child(listName)\
@@ -90,7 +90,7 @@ while True:
                       .child(index.encode("utf-8"))
                     data = {"State" :"Check" }
                     get.update(data)
-                    break;
+                    break
             if find == True:
                 print "You can go!"
             else:

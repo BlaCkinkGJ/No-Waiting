@@ -23,9 +23,6 @@ class QRScan:
         raw           = self.raw_data
         image         = zbar.Image(width, height, 'Y800', raw)
         self.scanner.scan(image)
-
         for symbol in image:
-            if(self.prev != symbol.data):
-                self.prev = symbol.data
-                return symbol.data
+            return symbol.data
         return None
