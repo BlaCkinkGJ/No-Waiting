@@ -12,10 +12,10 @@ const ixExists = require('../users').isExists;
 
 const passport = require('passport');
 
-const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\\')); //path of app.js file location
+// !!!!!!!! warning : below sentence can be executed differently on linux and window platform. !!!!!!!!!!!
+const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\\')); //path of app.js file location in Window.
+//const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\'); // in Linux
 router.use(express.static(path.join(mainPath, '/public')));
-
-
 
 /*
 router.use(session(  {
@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res) => {
-   res.redirect('/layout');
+    res.redirect('/layout');
 });
 
 router.get('/signup', (req, res, next) => {
