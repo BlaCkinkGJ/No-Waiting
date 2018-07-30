@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Admin_Account tmp = snapshot.getValue(Admin_Account.class);
                     Admin_Accounts.add(tmp);
+
                 }
                 show.setText("이제 로그인이 가능합니다.");
             }
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                for(int i=0;i<Admin_Accounts.size();i++){
                    Admin_Account cmp = Admin_Accounts.get(i);
+
                    if(cmp.Admin_Private_ID.equals(textID.getText().toString())&&cmp.Admin_Private_password.equals(textPwd.getText().toString())){
                        Intent intent = new Intent(MainActivity.this,MenuList.class);
                        intent.putExtra("DB_Admin", cmp);

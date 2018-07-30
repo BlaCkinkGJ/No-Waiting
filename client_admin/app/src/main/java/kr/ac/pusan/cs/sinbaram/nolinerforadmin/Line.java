@@ -12,6 +12,7 @@ public class Line implements Serializable {
     public String Opening_Time;
     public String Closing_Time;
     public String Personal_Interval;
+    public String Public_ID;
     Line() {
 
     }

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.content.Intent;
 
-public class SplashActivity extends Activity {
+public class Activity_Splash extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +16,7 @@ public class SplashActivity extends Activity {
         {
             e.printStackTrace();
         }
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, Activity_Main.class));
         finish();
     }
 }
