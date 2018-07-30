@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activity_Splash"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -19,11 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity_Main">
         </activity>
-        <activity android:name=".ListMenu" />
-        <activity android:name=".LineInfo" />
-        <activity android:name=".QRactivity" />
+        <activity android:name=".Activity_ListMenu" />
+        <activity android:name=".Activity_LineInfo" />
+        <activity android:name=".Activity_QRactivity" />
     </application>
 
 </manifest>

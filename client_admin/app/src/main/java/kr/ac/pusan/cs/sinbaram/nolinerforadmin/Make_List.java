@@ -196,7 +196,7 @@ public class Make_List extends AppCompatActivity {
                     line.Opening_Time = strOpenDate+" "+ strOpenTime;
                     line.Personal_Interval = inter_time;
                     line.Current_Enrollment_State = 0;
-
+                    line.Public_ID = public_id;
 
                 mRef.child("Line List").child(public_id).child(line.Line_Name).child("INFO").setValue(line);
                 mRef.child("Line List").child(public_id).child(line.Line_Name).child("ADMIN_ID").setValue(auth.Admin_Private_ID);

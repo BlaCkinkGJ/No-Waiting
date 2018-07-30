@@ -3,8 +3,9 @@ package kr.ac.pusan.cs.sinbaram.nolinerforadmin;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    String User_ID ;
-    String State ;
+    public String User_ID ;
+    public String State ;
+    public String Enter;
     User(){
 
     }

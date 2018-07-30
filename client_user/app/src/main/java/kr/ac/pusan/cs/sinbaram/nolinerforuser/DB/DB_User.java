@@ -5,8 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import kr.ac.pusan.cs.sinbaram.nolinerforuser.LineInfo;
-
 // 참고 : http://blog.naver.com/PostView.nhn?blogId=hee072794&logNo=220619425456
 public class DB_User extends SQLiteOpenHelper implements DB{
 

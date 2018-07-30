@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            class="com.google.android.gms.maps.MapFragment" />
+
+        <Button
+            android:id="@+id/mapbtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="뒤로가기" />
+    </LinearLayout>
+
+    // 누르면 밑에 나오는부분
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/bottom_sheet_behavior" />
+</android.support.design.widget.CoordinatorLayout>

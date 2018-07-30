@@ -1,0 +1,98 @@
+{
+  "Admin_Account" : {
+    "3pop PC (부산대 정문)" : {
+      "Admin_Private_ID" : "test03",
+      "Admin_Private_password" : "03",
+      "Admin_Public_ID" : "3pop PC (부산대 정문)",
+      "Description" : "#pc방 #1시간500원",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F3pop+PC+%28%EB%B6%80%EC%82%B0%EB%8C%80+%EC%A0%95%EB%AC%B8%29%2F1532892989321.jpg?alt=media&token=dafac324-43d9-46f8-bc00-b9a3518704ff"
+    },
+    "CU 편의점 (서면)" : {
+      "Admin_Private_ID" : "test02",
+      "Admin_Private_password" : "02",
+      "Admin_Public_ID" : "CU 편의점 (서면)",
+      "Description" : "#편의점 #CU #서면",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2FCU+%ED%8E%B8%EC%9D%98%EC%A0%90+%28%EC%84%9C%EB%A9%B4%29%2F1532896306156.png?alt=media&token=e5139283-a669-4071-9aab-936658caf971"
+    },
+    "마이피누 (부산대)" : {
+      "Admin_Private_password" : "1234",
+      "Admin_Prviate_ID" : "test06",
+      "Admin_Public_ID" : "마이피누 (부산대)",
+      "Description" : "#부산대 #커뮤니티",
+      "Image" : "https://storage.googleapis.com/no-waiting-de057.appspot.com/Admin%2F%EB%A7%88%EC%9D%B4%ED%94%BC%EB%88%84%20(%EB%B6%80%EC%82%B0%EB%8C%80)%2Fmypnu-logo.jpg?GoogleAccessId=firebase-adminsdk-s5w98%40no-waiting-de057.iam.gserviceaccount.com&Expires=16446985200&Signature=kdjP8EtUoLbTFxlM8Swanl8SrOQb6J0S8AZUEqLQhkjcacPf%2B3rwLbeBtQ%2FZQrlPuDzCQSotP6xkwvlwAAABa6fKEnoe%2B1vqakVc0IMbB6%2BaOAp0hiv%2FaR4QeVtneTHDDwQBmR1Go9vuEjclEMwP%2B8GqKThmqVv%2FnHk8tftAuSkQKLolVCFBxQlHKTDmsBvXm28RLsPcHgbpGockLi4K8epLGw%2FLPxQ7M9IPO5qtG5pSCfwd2YfVdQegL9ExlMLWQRrB%2BDRSNHDk4L%2FZVKu1TaC5i1KZsdFCTWYHpn8TOGd1cSI2kDtY5D5l5dcvOFRnJvaZsiyw%2B2hZPHlJVYMiTw%3D%3D"
+    },
+    "스타벅스 (부산대)" : {
+      "Admin_Private_ID" : "test04",
+      "Admin_Private_password" : "04",
+      "Admin_Public_ID" : "스타벅스 (부산대)",
+      "Description" : "#스타벅스 #부산대",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4+%28%EB%B6%80%EC%82%B0%EB%8C%80%29%2F1532892991580.jpg?alt=media&token=5420def1-e778-4149-a279-3063e1c16a8c"
+    },
+    "유가네 닭갈비 (부산대 점)" : {
+      "Admin_Private_ID" : "test01",
+      "Admin_Private_password" : "01",
+      "Admin_Public_ID" : "유가네 닭갈비 (부산대 점)",
+      "Description" : "#유가네닭갈비 #본점",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%EC%9C%A0%EA%B0%80%EB%84%A4+%EB%8B%AD%EA%B0%88%EB%B9%84+%28%EB%B6%80%EC%82%B0%EB%8C%80+%EC%A0%90%29%2F1532892987011.jpg?alt=media&token=7f5b0add-f7d4-432d-9af5-4c2c3a1dc940"
+    }
+  },
+  "Line List" : {
+    "유가네 닭갈비 (부산대 점)" : {
+      "10시 줄" : {
+        "ADMIN_ID" : "test01",
+        "INFO" : {
+          "Closing_Time" : "2018-08-02 04:19",
+          "Current_Enrollment_State" : 4,
+          "Line_Name" : "10시 줄",
+          "Max_Number" : 10,
+          "Opening_Time" : "2018-07-27 04:19",
+          "Personal_Interval" : "5",
+          "Public_ID" : "유가네 닭갈비 (부산대 점)",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALF7HLQ5CEsIuiyk6BGzcCOm6fUW7h0D0Ng18fwZL2so\nT+DJcsWDXzFKsEhPPu/4+QmTlHABUl1kfzxxrYn7bpMCAwEAAQ==\n"
+        },
+        "USER LIST" : {
+          "-LIe3r2FbQC8un2xrXQO" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "P2tX3lDamIiMl3//DwsAJpzX0fXaWYIfgT/0mZnlkFQH4CKoeoMp9GXhJxVRc5euAxBw/pm5P0c0\nRlR9l7koSA==\n"
+          },
+          "-LIebIscCmEmDbyEWeDX" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "Epa74L/yvCfaAtn1z/8ozmuQQbKJdLuOhJumMCdBtT/8nVAp6buToxd90gozNbzfc4FerpE7B2GJ\nu4/TGtso3A==\n"
+          },
+          "-LIgAT3_mM144P0W5JqF" : {
+            "Enter" : "can",
+            "State" : "wait",
+            "User_ID" : "hB1dvF16hI4ogCb0y/71K/69IO1hQpLoPl2oVvBy9WJ45AZA+50m2ChbS/IsvwA0C56vEuWBl9Jt\nGOYXvGNccw==\n"
+          },
+          "-LIgG7ywrmHwuD5fQG7I" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "QBd65s29CwCYHgRmhkywl98C99dPZumRuZC8nc95eUFTLxkuSwuI42TayI2Ybf7cHbMFt5reKqEm\nWQW809IyNg==\n"
+          }
+        }
+      },
+      "11시 줄" : {
+        "ADMIN_ID" : "test01",
+        "INFO" : {
+          "Closing_Time" : "2018-06-23 06:19",
+          "Current_Enrollment_State" : 1,
+          "Line_Name" : "11시 줄",
+          "Max_Number" : 20,
+          "Opening_Time" : "2018-06-21 04:19",
+          "Personal_Interval" : "2",
+          "Public_ID" : "유가네 닭갈비 (부산대 점)",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMe7+5leNm6kLnz7xXmo/PSZ65IinyjBKOOcIT8dIzh6\n48H8N/iUhbxqVmci+zInaf9IQbOIKKjZgOk+8UG/QN8CAwEAAQ==\n"
+        },
+        "USER LIST" : {
+          "-LIgGH1N8v6-u-uRzf39" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "DzjogBprD+HYLHwYm1YXjV0HbsGYzLhvSqcZ/n81JdjLiXx41evZCdS5Ot2l40TG3Omxc3iBc/QQ\nJT0GvJxdpg==\n"
+          }
+        }
+      }
+    }
+  }
+}
