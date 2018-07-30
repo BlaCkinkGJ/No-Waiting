@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lineName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="10pt"
+            tools:text="Autumn Leaves"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginLeft="30dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp">
+
+            <TextView
+                android:id="@+id/openTime"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/closeTime"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/users"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/image"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/main"
+            android:layout_marginLeft="30dp" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

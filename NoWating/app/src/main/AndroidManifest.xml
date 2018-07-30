@@ -18,7 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Search"></activity>
+        <activity android:name=".Activity_Search" />
+        <activity android:name=".Activity_lineList" />
+        <activity android:name=".Activity_LineInfo" />
+        <activity android:name=".Activity_QRcode" />
+        <activity android:name=".Activity_MyLists"></activity>
     </application>
 
 </manifest>

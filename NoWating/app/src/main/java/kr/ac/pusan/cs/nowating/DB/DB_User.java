@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 // 참고 : http://blog.naver.com/PostView.nhn?blogId=hee072794&logNo=220619425456
 public class DB_User extends SQLiteOpenHelper implements DB{
 
@@ -59,4 +61,15 @@ public class DB_User extends SQLiteOpenHelper implements DB{
         }
         return null;
     }
+
+    public ArrayList<String> getAll(){
+        ArrayList<String> lineNameList = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM USER_INFO", null);
+        while(cursor.moveToNext()){
+            lineNameList.add(cursor.getString(LIST_NAME));
+        }
+        return lineNameList;
+    }
+
 }
