@@ -1,18 +1,38 @@
 <html>
 <head>
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 </head>
 <body>
+<input type="text" name="" class="postcodify_postcode5" value="" >
+<button id="postcodify_search_button">검색</button><br >
+<input type="text" name="" class="postcodify_address" value="" ><br>
+<input type="text" name="" class="postcodify_details" value="" ><br>
+<input type="text" name="" class="postcodify_extra_info" value=""><br>
+
+<!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
+<script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
+
+<!-- 검색 기능을 표시할 <div>를 생성한다 -->
+<div id="postcodify"></div>
+
+<!-- 주소와 우편번호를 입력할 <input>들을 생성하고 적당한 name과 id를 부여한다 -->
+<input type="text" name="" id="postcode" value=""><br>
+<input type="text" name="" id="address" value=""><br>
+<input type="text" name="" id="details" value=""> <br>
+<input type="text" name="" id="extra_info" value=""><br>
+
+<!-- jQuery와 Postcodify를 로딩한다 -->
+
+<!-- 위에서 생성한 <div>에 검색 기능을 표시하고, 결과를 입력할 <input>들과 연동한다 -->
 <script>
-    //load함수를 이용하여 core스크립트의 로딩이 완료된 후, 우편번호 서비스를 실행합니다.
-    daum.postcode.load(function(){
-        new daum.Postcode({
-            oncomplete: function(data) {
-                document.write(data["address"]);
-            }
-        }).open();
-    });
-    // document.write에 담긴 데이터를 가져와야 한다.
+    $(function() { $("#postcodify").postcodify({
+        insertPostcode5 : "#postcode",
+        insertAddress : "#address",
+        insertDetails : "#details",
+        insertExtraInfo : "#extra_info",
+        hideOldAddresses : false
+    }); });
 </script>
 </body>
 </html>
