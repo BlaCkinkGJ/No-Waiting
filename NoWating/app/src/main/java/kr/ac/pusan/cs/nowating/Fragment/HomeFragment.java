@@ -1,9 +1,6 @@
 package kr.ac.pusan.cs.nowating.Fragment;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -14,13 +11,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -29,16 +22,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import kr.ac.pusan.cs.nowating.Activity_Main;
-import kr.ac.pusan.cs.nowating.Activity_Search;
-import kr.ac.pusan.cs.nowating.Adapter_Recycler;
+import kr.ac.pusan.cs.nowating.Adapter_Admin;
+import kr.ac.pusan.cs.nowating.DB.DB_User;
 import kr.ac.pusan.cs.nowating.Object.Obj_AdminAccount;
-import kr.ac.pusan.cs.nowating.Object.Obj_Line;
-import kr.ac.pusan.cs.nowating.Object.Obj_LineInfo;
 import kr.ac.pusan.cs.nowating.R;
 
 import static android.app.Activity.RESULT_OK;
@@ -49,11 +39,12 @@ public class HomeFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference mRef;
     RecyclerView rcv;
-    Adapter_Recycler rcvAdapter;
+    Adapter_Admin rcvAdapter;
+    private DB_User DB;
     private Animation fab_open, fab_close;
     private Boolean isFabOpen = false;
     private FloatingActionButton fab, fab1, fab2;
-    private List<Obj_AdminAccount> lineList;
+    private List<Obj_AdminAccount>  list;
     private ArrayList<Obj_AdminAccount> arraylist;
     private static final int SEARCHTITLE = 111;
     private final String PERSISTENT_VARIABLE_BUNDLE_KEY = "persistentVariable";
@@ -64,9 +55,11 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference();
-        lineList = new ArrayList<Obj_AdminAccount>();
+        list = new ArrayList<Obj_AdminAccount>();
         arraylist=new ArrayList<Obj_AdminAccount>();
-
+        //DB = new DB_User(view.getContext(), "USER", null, 1);
+        //DB.delete(line.Line_Name);
+        //User_ID = DB.get(line.Line_Name,2);
         //setHasOptionsMenu(true);
         //rcv.addItemDecoration(new DividerItemDecoration(this, linearLayoutManager.getOrientation()));
 
@@ -96,11 +89,12 @@ public class HomeFragment extends Fragment {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbarLayout.setTitle("Main Menu");
+                    collapsingToolbarLayout.setTitle("No Wating... ");
                     collapsingToolbarLayout.setCollapsedTitleGravity(Gravity.CENTER_HORIZONTAL);
                     isShow = true;
                 } else if(isShow) {
-                    collapsingToolbarLayout.setTitle(" 등록된 가게들... ");//carefull there should a space between double quote otherwise it wont work
+                    collapsingToolbarLayout.setTitle(" No Wating... ");//carefull there should a space between double quote otherwise it wont work
+                    collapsingToolbarLayout.setCollapsedTitleGravity(Gravity.CENTER_HORIZONTAL);
                     isShow = false;
                 }
             }
@@ -127,10 +121,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        if(lineList.size()==0){
+        if(list.size()==0){
             getDB();
         }else{
-            rcvAdapter = new Adapter_Recycler(activity, lineList);
+            rcvAdapter = new Adapter_Admin(activity, list);
             rcv.setAdapter(rcvAdapter);
         }
 
@@ -142,14 +136,14 @@ public class HomeFragment extends Fragment {
         mRef.child("Admin_Account").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                lineList.clear();
+                list.clear();
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                 Obj_AdminAccount tmp = snapshot.getValue(Obj_AdminAccount.class);
-                lineList.add(tmp);
+                list.add(tmp);
                 }
 
-                arraylist.addAll(lineList);
-                rcvAdapter = new Adapter_Recycler(activity, lineList);
+                arraylist.addAll(list);
+                rcvAdapter = new Adapter_Admin(activity, list);
                 rcv.setAdapter(rcvAdapter);
                 //loading.progressOFF();
 
@@ -164,11 +158,11 @@ public class HomeFragment extends Fragment {
         int id = v.getId();
         switch (id) {
             case R.id.fab:
-                //anim();
-                Toast.makeText(view.getContext(), "검색", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(view.getContext(), Activity_Search.class);
-                intent.putExtra("list", (Serializable) arraylist);
-                startActivityForResult(intent,SEARCHTITLE);
+                anim();
+                //Toast.makeText(view.getContext(), "검색", Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(view.getContext(), Activity_Search.class);
+                //intent.putExtra("list", (Serializable) arraylist);
+                //startActivityForResult(intent,SEARCHTITLE);
                 break;
             case R.id.fab1:
                 anim();
@@ -211,12 +205,12 @@ public class HomeFragment extends Fragment {
                 case SEARCHTITLE:
                     String pubID = data.getStringExtra("title");
                     System.out.println(pubID);
-                    lineList.clear();
+                    list.clear();
                     for (int i = 0; i < arraylist.size(); i++) {
 
                         if (arraylist.get(i).Admin_Public_ID.equals(pubID)) {
                             // 검색된 데이터를 리스트에 추가한다.
-                            lineList.add(arraylist.get(i));
+                            list.add(arraylist.get(i));
                         }
                     }
                     //rcvAdapter = new MyRecyclerAdapter(activity, bookInfoList);

@@ -3,9 +3,10 @@ package kr.ac.pusan.cs.nowating.Object;
 import java.io.Serializable;
 
 public class Obj_User implements Serializable {
-    String User_ID ;
-    String State ;
-    Obj_User(){
+    public String User_ID ;
+    public String State ;
+    public String Enter ;
+    public Obj_User(){
 
     }
 
