@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Cards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='http://codepen.io/ChynoDeluxe/pen/eJPeEL'>
+
+      <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/checkbox.css">
+  
+</head>
+
+<body>
+  <!--PEN CODE-->
+
+
+  <% for (var i = 0; i < snapshot.length; i++) { %>
+  <div class="blog-card">
+
+	  <div class = "photo"><img src=<%=image %>></div>
+	  <div class="description">
+		  <h1><%= snapshot[i].INFO.Line_Name %></h1>
+		  <h2><%= snapshot[i].INFO.Public_ID %></h2>
+          <label class="container">One
+              <input type="checkbox" checked="checked">
+              <span class="checkmark"></span>
+          </label>
+		  <p>Max number : <%= snapshot[i].INFO.Max_Number %></p>
+		  <p>Enroll number : <%= snapshot[i].INFO.Current_Enrollment_State%></p>
+		  <a href="line/?line_name=<%= snapshot[i].INFO.Line_Name %>">세부 정보</a>
+	  </div>
+  </div>
+  <% } %>
+
+
+<!--END PEN CODE-->
+  
+  
+</body>
+</html>
