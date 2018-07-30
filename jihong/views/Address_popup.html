@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
+</head>
+<body>
+<script>
+    //load함수를 이용하여 core스크립트의 로딩이 완료된 후, 우편번호 서비스를 실행합니다.
+    daum.postcode.load(function(){
+        new daum.Postcode({
+            oncomplete: function(data) {
+                document.write(data["address"]);
+            }
+        }).open();
+    });
+    // document.write에 담긴 데이터를 가져와야 한다.
+</script>
+</body>
+</html>
