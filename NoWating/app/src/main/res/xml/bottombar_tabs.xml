@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <tabs>
+        <tab
+            id="@+id/tab_call_log"
+            icon="@drawable/ic_home_black_24dp"
+            title="home"
+            />
+        <tab
+            id="@+id/tab_contacts"
+            icon="@drawable/ic_dashboard_black_24dp"
+            title="myinfo"
+            />
+        <tab
+            id="@+id/tab_macro_setting"
+            icon="@drawable/ic_notifications_black_24dp"
+            title="map"
+            />
+
+    </tabs>
+
+</PreferenceScreen>

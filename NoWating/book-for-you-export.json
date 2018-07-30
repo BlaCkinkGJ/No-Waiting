@@ -1,0 +1,198 @@
+{
+  "Book" : {
+    "001" : {
+      "-LIAl2JZ7pz8zvkROyaJ" : {
+        "book" : {
+          "author" : "최인철",
+          "image" : "https://bookthumb-phinf.pstatic.net/cover/137/356/13735637.jpg?type=m1&udate=20180713",
+          "price" : "17000",
+          "pubdate" : "20180620",
+          "publisher" : "21세기북스",
+          "title" : "굿 라이프 (내 삶을 바꾸는 심리학의 지혜)"
+        },
+        "description" : "",
+        "imageURI" : {
+          "imageUri1" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F001%2F%EA%B5%BF%20%EB%9D%BC%EC%9D%B4%ED%94%84%20(%EB%82%B4%20%EC%82%B6%EC%9D%84%20%EB%B0%94%EA%BE%B8%EB%8A%94%20%EC%8B%AC%EB%A6%AC%ED%95%99%EC%9D%98%20%EC%A7%80%ED%98%9C)%2FScreenshot_20180724-152013_andrro.jpg?alt=media&token=481e6e1e-5fa0-479e-abfc-457a0f7691c0",
+          "imageUri2" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F001%2F%EA%B5%BF%20%EB%9D%BC%EC%9D%B4%ED%94%84%20(%EB%82%B4%20%EC%82%B6%EC%9D%84%20%EB%B0%94%EA%BE%B8%EB%8A%94%20%EC%8B%AC%EB%A6%AC%ED%95%99%EC%9D%98%20%EC%A7%80%ED%98%9C)%2F20180724_132646.jpg?alt=media&token=6013d3c9-4000-41cb-bbee-47f0dd2e2871",
+          "imageUri3" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F001%2F%EA%B5%BF%20%EB%9D%BC%EC%9D%B4%ED%94%84%20(%EB%82%B4%20%EC%82%B6%EC%9D%84%20%EB%B0%94%EA%BE%B8%EB%8A%94%20%EC%8B%AC%EB%A6%AC%ED%95%99%EC%9D%98%20%EC%A7%80%ED%98%9C)%2FScreenshot_20180724-122330_BookApi.jpg?alt=media&token=bceec5fa-b8e0-4220-9893-6713d4d1d806"
+        },
+        "state" : "none",
+        "userID" : "001"
+      },
+      "-LIEYmPNY53KeQDSHeIc" : {
+        "book" : {
+          "author" : "토니 로빈스",
+          "image" : "https://bookthumb-phinf.pstatic.net/cover/133/651/13365119.jpg?type=m1&udate=20180703",
+          "price" : "16000",
+          "pubdate" : "20180305",
+          "publisher" : "알에이치코리아",
+          "title" : "흔들리지 않는 돈의 법칙 (세계 0.001% 부의 거인들의 머니 시크릿)"
+        },
+        "description" : "나니?",
+        "imageURI" : {
+          "imageUri1" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F001%2F%ED%9D%94%EB%93%A4%EB%A6%AC%EC%A7%80+%EC%95%8A%EB%8A%94+%EB%8F%88%EC%9D%98+%EB%B2%95%EC%B9%99+%28%EC%84%B8%EA%B3%84+0.001%25+%EB%B6%80%EC%9D%98+%EA%B1%B0%EC%9D%B8%EB%93%A4%EC%9D%98+%EB%A8%B8%EB%8B%88+%EC%8B%9C%ED%81%AC%EB%A6%BF%29%2FScreenshot_20180725-113705_andrro.jpg?alt=media&token=eba6d407-3a40-4415-9c78-679e6d2749b3",
+          "imageUri2" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F001%2F%ED%9D%94%EB%93%A4%EB%A6%AC%EC%A7%80+%EC%95%8A%EB%8A%94+%EB%8F%88%EC%9D%98+%EB%B2%95%EC%B9%99+%28%EC%84%B8%EA%B3%84+0.001%25+%EB%B6%80%EC%9D%98+%EA%B1%B0%EC%9D%B8%EB%93%A4%EC%9D%98+%EB%A8%B8%EB%8B%88+%EC%8B%9C%ED%81%AC%EB%A6%BF%29%2F20180716_203249.jpg?alt=media&token=70537bc2-0e08-4a80-ad63-781c26d8cd76",
+          "imageUri3" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F001%2F%ED%9D%94%EB%93%A4%EB%A6%AC%EC%A7%80+%EC%95%8A%EB%8A%94+%EB%8F%88%EC%9D%98+%EB%B2%95%EC%B9%99+%28%EC%84%B8%EA%B3%84+0.001%25+%EB%B6%80%EC%9D%98+%EA%B1%B0%EC%9D%B8%EB%93%A4%EC%9D%98+%EB%A8%B8%EB%8B%88+%EC%8B%9C%ED%81%AC%EB%A6%BF%29%2F20180716_181106.jpg?alt=media&token=5c927a9c-6dcb-4592-a040-bf466cd7e755"
+        },
+        "state" : "none",
+        "userID" : "001"
+      }
+    },
+    "002" : {
+      "-LIEZpf-sO3eVHjV9lU3" : {
+        "book" : {
+          "author" : "백희나",
+          "image" : "https://bookthumb-phinf.pstatic.net/cover/014/731/01473196.jpg?type=m1&udate=20110816",
+          "price" : "11000",
+          "pubdate" : "20041001",
+          "publisher" : "한솔수북(한솔교육)",
+          "title" : "구름빵"
+        },
+        "description" : "ttt",
+        "imageURI" : {
+          "imageUri1" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B5%AC%EB%A6%84%EB%B9%B5%2FScreenshot_20180519-145120_Chrome.jpg?alt=media&token=6c749e8b-98d7-487a-bcbc-451ab1d02e09",
+          "imageUri2" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B5%AC%EB%A6%84%EB%B9%B5%2FScreenshot_20180508-162236_NAVER.jpg?alt=media&token=9827b04a-15f9-4688-ad2b-b282aa114bac",
+          "imageUri3" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B5%AC%EB%A6%84%EB%B9%B5%2F20180526_165132.jpg?alt=media&token=d7a925fc-e4d4-4530-a464-822f3a4fc1ff"
+        },
+        "state" : "none",
+        "userID" : "002"
+      },
+      "-LIFazg3xpMQ_ET8TXtP" : {
+        "book" : {
+          "author" : "김용환",
+          "image" : "https://bookthumb-phinf.pstatic.net/cover/136/423/13642343.jpg?type=m1&udate=20180624",
+          "price" : "28000",
+          "pubdate" : "20180601",
+          "publisher" : "한빛미디어",
+          "title" : "파이썬을 활용한 금융공학 레시피 (문과생의 코딩 울렁증과 이과생의 금융 울렁증을 한 방에 씻어줄 금융공학 사이다)"
+        },
+        "description" : "쉣",
+        "imageURI" : {
+          "imageUri1" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%9D%84+%ED%99%9C%EC%9A%A9%ED%95%9C+%EA%B8%88%EC%9C%B5%EA%B3%B5%ED%95%99+%EB%A0%88%EC%8B%9C%ED%94%BC+%28%EB%AC%B8%EA%B3%BC%EC%83%9D%EC%9D%98+%EC%BD%94%EB%94%A9+%EC%9A%B8%EB%A0%81%EC%A6%9D%EA%B3%BC+%EC%9D%B4%EA%B3%BC%EC%83%9D%EC%9D%98+%EA%B8%88%EC%9C%B5+%EC%9A%B8%EB%A0%81%EC%A6%9D%EC%9D%84+%ED%95%9C+%EB%B0%A9%EC%97%90+%EC%94%BB%EC%96%B4%EC%A4%84+%EA%B8%88%EC%9C%B5%EA%B3%B5%ED%95%99+%EC%82%AC%EC%9D%B4%EB%8B%A4%29%2F20180725_153211_rmscr.jpg?alt=media&token=a5f1665e-6d0b-425d-81b7-4910e2d9c961",
+          "imageUri2" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%9D%84+%ED%99%9C%EC%9A%A9%ED%95%9C+%EA%B8%88%EC%9C%B5%EA%B3%B5%ED%95%99+%EB%A0%88%EC%8B%9C%ED%94%BC+%28%EB%AC%B8%EA%B3%BC%EC%83%9D%EC%9D%98+%EC%BD%94%EB%94%A9+%EC%9A%B8%EB%A0%81%EC%A6%9D%EA%B3%BC+%EC%9D%B4%EA%B3%BC%EC%83%9D%EC%9D%98+%EA%B8%88%EC%9C%B5+%EC%9A%B8%EB%A0%81%EC%A6%9D%EC%9D%84+%ED%95%9C+%EB%B0%A9%EC%97%90+%EC%94%BB%EC%96%B4%EC%A4%84+%EA%B8%88%EC%9C%B5%EA%B3%B5%ED%95%99+%EC%82%AC%EC%9D%B4%EB%8B%A4%29%2F20180725_153156_rmscr.jpg?alt=media&token=6c3bdd32-7664-47b4-b587-f6399bcc40e4",
+          "imageUri3" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%9D%84+%ED%99%9C%EC%9A%A9%ED%95%9C+%EA%B8%88%EC%9C%B5%EA%B3%B5%ED%95%99+%EB%A0%88%EC%8B%9C%ED%94%BC+%28%EB%AC%B8%EA%B3%BC%EC%83%9D%EC%9D%98+%EC%BD%94%EB%94%A9+%EC%9A%B8%EB%A0%81%EC%A6%9D%EA%B3%BC+%EC%9D%B4%EA%B3%BC%EC%83%9D%EC%9D%98+%EA%B8%88%EC%9C%B5+%EC%9A%B8%EB%A0%81%EC%A6%9D%EC%9D%84+%ED%95%9C+%EB%B0%A9%EC%97%90+%EC%94%BB%EC%96%B4%EC%A4%84+%EA%B8%88%EC%9C%B5%EA%B3%B5%ED%95%99+%EC%82%AC%EC%9D%B4%EB%8B%A4%29%2FScreenshot_20180725-152905_andrro.jpg?alt=media&token=9d97a6ce-911f-4ade-9757-be4786fb1acf"
+        },
+        "state" : "regist",
+        "userID" : "002"
+      },
+      "-LIFjfrvWY9s5tVUWiLU" : {
+        "book" : {
+          "author" : "로버트 기요사키",
+          "image" : "https://bookthumb-phinf.pstatic.net/cover/133/473/13347349.jpg?type=m1&udate=20180717",
+          "price" : "15800",
+          "pubdate" : "20180222",
+          "publisher" : "민음인",
+          "title" : "부자 아빠 가난한 아빠 20주년 특별 기념판"
+        },
+        "description" : "테스트당",
+        "imageURI" : {
+          "imageUri1" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EB%B6%80%EC%9E%90+%EC%95%84%EB%B9%A0+%EA%B0%80%EB%82%9C%ED%95%9C+%EC%95%84%EB%B9%A0+20%EC%A3%BC%EB%85%84+%ED%8A%B9%EB%B3%84+%EA%B8%B0%EB%85%90%ED%8C%90%2F20180725_153156_rmscr.jpg?alt=media&token=c055a09f-8224-43b1-84b5-c8c6b62653b2",
+          "imageUri2" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EB%B6%80%EC%9E%90+%EC%95%84%EB%B9%A0+%EA%B0%80%EB%82%9C%ED%95%9C+%EC%95%84%EB%B9%A0+20%EC%A3%BC%EB%85%84+%ED%8A%B9%EB%B3%84+%EA%B8%B0%EB%85%90%ED%8C%90%2F20180725_153211_rmscr.jpg?alt=media&token=1bd73fbd-babb-41ac-a5c3-e648295edf92",
+          "imageUri3" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EB%B6%80%EC%9E%90+%EC%95%84%EB%B9%A0+%EA%B0%80%EB%82%9C%ED%95%9C+%EC%95%84%EB%B9%A0+20%EC%A3%BC%EB%85%84+%ED%8A%B9%EB%B3%84+%EA%B8%B0%EB%85%90%ED%8C%90%2FScreenshot_20180725-131527_%EC%98%A5%EC%85%98.jpg?alt=media&token=628df6fd-3e95-41e5-b904-c98db23d9aa1"
+        },
+        "state" : "other",
+        "userID" : "002"
+      },
+      "-LIFmg30LemMscIflim7" : {
+        "book" : {
+          "author" : "안드레 애치먼",
+          "image" : "https://bookthumb-phinf.pstatic.net/cover/133/782/13378276.jpg?type=m1&udate=20180406",
+          "price" : "16800",
+          "pubdate" : "20180305",
+          "publisher" : "잔",
+          "title" : "그해, 여름 손님 (양장판)"
+        },
+        "description" : "수공",
+        "imageURI" : {
+          "imageUri1" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B7%B8%ED%95%B4%2C+%EC%97%AC%EB%A6%84+%EC%86%90%EB%8B%98+%28%EC%96%91%EC%9E%A5%ED%8C%90%29%2F20180725_153156_rmscr.jpg?alt=media&token=c9dd6aad-4b88-4949-8bc0-a9bfd777ce55",
+          "imageUri2" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B7%B8%ED%95%B4%2C+%EC%97%AC%EB%A6%84+%EC%86%90%EB%8B%98+%28%EC%96%91%EC%9E%A5%ED%8C%90%29%2F20180725_153211_rmscr.jpg?alt=media&token=28bcb100-9e3f-4117-bb5b-2e2cb5f64491",
+          "imageUri3" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B7%B8%ED%95%B4%2C+%EC%97%AC%EB%A6%84+%EC%86%90%EB%8B%98+%28%EC%96%91%EC%9E%A5%ED%8C%90%29%2FScreenshot_20180725-152905_andrro.jpg?alt=media&token=ce808bcd-07b5-4067-8e1e-ca6ad28816aa"
+        },
+        "state" : "none",
+        "userID" : "002"
+      },
+      "-LIJgZeOPTlU-LaBr4Lw" : {
+        "book" : {
+          "author" : "임준호",
+          "image" : "https://bookthumb-phinf.pstatic.net/cover/124/845/12484547.jpg?type=m1&udate=20170918",
+          "price" : "16000",
+          "pubdate" : "20170818",
+          "publisher" : "학고재",
+          "title" : "군대 골라가기 (취업과 성공을 보장하는,제대한 뒤 읽으면 엄청 후회할 책)"
+        },
+        "description" : "ㄷㄷ돈줘",
+        "imageURI" : {
+          "imageUri1" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B5%B0%EB%8C%80+%EA%B3%A8%EB%9D%BC%EA%B0%80%EA%B8%B0+%28%EC%B7%A8%EC%97%85%EA%B3%BC+%EC%84%B1%EA%B3%B5%EC%9D%84+%EB%B3%B4%EC%9E%A5%ED%95%98%EB%8A%94%2C%EC%A0%9C%EB%8C%80%ED%95%9C+%EB%92%A4+%EC%9D%BD%EC%9C%BC%EB%A9%B4+%EC%97%84%EC%B2%AD+%ED%9B%84%ED%9A%8C%ED%95%A0+%EC%B1%85%29%2FScreenshot_20180720-153402_BookApi.jpg?alt=media&token=bd15d65f-3e1b-458a-b6f5-073e2a7d3ba0",
+          "imageUri2" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B5%B0%EB%8C%80+%EA%B3%A8%EB%9D%BC%EA%B0%80%EA%B8%B0+%28%EC%B7%A8%EC%97%85%EA%B3%BC+%EC%84%B1%EA%B3%B5%EC%9D%84+%EB%B3%B4%EC%9E%A5%ED%95%98%EB%8A%94%2C%EC%A0%9C%EB%8C%80%ED%95%9C+%EB%92%A4+%EC%9D%BD%EC%9C%BC%EB%A9%B4+%EC%97%84%EC%B2%AD+%ED%9B%84%ED%9A%8C%ED%95%A0+%EC%B1%85%29%2FScreenshot_20180720-155334_NAVER.jpg?alt=media&token=973c522d-5bc4-416d-8a3e-3baa3a3a8b6e",
+          "imageUri3" : "https://firebasestorage.googleapis.com/v0/b/book-for-you.appspot.com/o/book_images%2F002%2F%EA%B5%B0%EB%8C%80+%EA%B3%A8%EB%9D%BC%EA%B0%80%EA%B8%B0+%28%EC%B7%A8%EC%97%85%EA%B3%BC+%EC%84%B1%EA%B3%B5%EC%9D%84+%EB%B3%B4%EC%9E%A5%ED%95%98%EB%8A%94%2C%EC%A0%9C%EB%8C%80%ED%95%9C+%EB%92%A4+%EC%9D%BD%EC%9C%BC%EB%A9%B4+%EC%97%84%EC%B2%AD+%ED%9B%84%ED%9A%8C%ED%95%A0+%EC%B1%85%29%2F20180716_203249.jpg?alt=media&token=fb942511-0d20-42dd-932f-f4e08f39d09e"
+        },
+        "state" : "none",
+        "userID" : "002"
+      }
+    }
+  },
+  "Book_Store" : [ null, {
+    "location" : {
+      "x" : 35.231791,
+      "y" : 129.08248
+    },
+    "maxNum" : 5,
+    "usedNum" : 3
+  }, {
+    "location" : {
+      "x" : 35.232753,
+      "y" : 129.082756
+    },
+    "maxNum" : 3,
+    "usedNum" : 3
+  }, {
+    "location" : {
+      "x" : 35.232278,
+      "y" : 129.081304
+    },
+    "maxNum" : 10,
+    "usedNum" : 0
+  }, {
+    "location" : {
+      "x" : 35.233018,
+      "y" : 129.080301
+    },
+    "maxNum" : 5,
+    "usedNum" : 4
+  }, {
+    "location" : {
+      "x" : 35.232757,
+      "y" : 129.078716
+    },
+    "maxNum" : 9,
+    "usedNum" : 9
+  }, {
+    "location" : {
+      "x" : 35.233616,
+      "y" : 129.081207
+    },
+    "maxNum" : 1,
+    "usedNum" : 0
+  }, {
+    "location" : {
+      "x" : 35.233159,
+      "y" : 129.084132
+    },
+    "maxNum" : 8,
+    "usedNum" : 0
+  }, {
+    "location" : {
+      "x" : 35.234841,
+      "y" : 129.081127
+    },
+    "maxNum" : 10,
+    "usedNum" : 4
+  }, {
+    "location" : {
+      "x" : 35.235619,
+      "y" : 129.079082
+    },
+    "maxNum" : 10,
+    "usedNum" : 7
+  } ]
+}
