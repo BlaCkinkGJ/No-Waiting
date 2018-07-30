@@ -26,21 +26,11 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--===============================================================================================-->
-    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "https://d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 </head>
 <body>
 
-<script>
-    //load함수를 이용하여 core스크립트의 로딩이 완료된 후, 우편번호 서비스를 실행합니다.
-    var loadDaum = function() { daum.postcode.load(function(){
-        new daum.Postcode({
-            oncomplete: function(data) {
-                document.write(data["address"]);
-            }
-        }).open();
-    }); };
-    // document.write에 담긴 데이터를 가져와야 한다.
-</script>
 
 <div class="limiter">
     <div class="container-login100">
@@ -54,7 +44,7 @@
 					</span>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="ID">
+                    <input class="input100" type="text" name="ID" style="text-align:left;">
                     <span class="focus-input100" data-placeholder="ID"></span>
                 </div>
 
@@ -62,27 +52,39 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-                    <input class="input100" type="password" name="pass">
+                    <input class="input100" type="password" name="pass" style="text-align:left;">
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="publicID">
+                    <input class="input100" type="text" name="publicID" style="text-align:left;">
                     <span class="focus-input100" data-placeholder="Public ID"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="description">
+                    <input class="input100" type="text" name="description" style="text-align:left;">
                     <span class="focus-input100" data-placeholder="Description"></span>
+                </div>
+                </form>
+
+                  <div class="container-login100-form-btn" >
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" id="postcodify">
+                            주소 찾기
+                        </button>
+                    </div>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="address">
+                    <input class="input100" type="text" name="address" id="address" style="text-align:left;">
                     <span class="focus-input100" data-placeholder="Address"></span>
                 </div>
 
+
+                <form class="login100-form validate-form" method="post" enctype="multipart/form-data">
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="file" name="userfile">
+                    <input class="input100" type="file" name="userfile" style="text-align:left;">
                     <span class="focus-input100" data-placeholder="file"></span>
                 </div>
 
@@ -112,6 +114,12 @@
 
 <div id="dropDownSelect1"></div>
 
+<script>
+    $(()=>{$("#postcodify").postcodifyPopUp({
+        insertAddress : "#address"
+        });
+    });
+</script>
 <!--===============================================================================================-->
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

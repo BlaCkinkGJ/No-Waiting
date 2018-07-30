@@ -12,10 +12,8 @@ const ixExists = require('../users').isExists;
 
 const passport = require('passport');
 
-const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\\')); //path of app.js file location
+const mainPath = __dirname.slice(0, __dirname.lastIndexOf('/')); //path of app.js file location
 router.use(express.static(path.join(mainPath, '/public')));
-
-
 
 /*
 router.use(session(  {
