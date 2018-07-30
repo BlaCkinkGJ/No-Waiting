@@ -12,9 +12,7 @@ const ixExists = require('../users').isExists;
 
 const passport = require('passport');
 
-// !!!!!!!! warning : below sentence can be executed differently on linux and window platform. !!!!!!!!!!!
-const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\\')); //path of app.js file location in Window.
-//const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\'); // in Linux
+const mainPath = __dirname.slice(0, __dirname.lastIndexOf('/')); //path of app.js file location
 router.use(express.static(path.join(mainPath, '/public')));
 
 /*
