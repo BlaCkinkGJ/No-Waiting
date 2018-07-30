@@ -1,6 +1,6 @@
 # How to use?
 ### Dependencies
-- zbar : Analyze the QR Code
+- zbar-py : Analyze the QR Code
 - pillow(as PIL) = 2.9.0 : get or set image from SimpleCV 
 - SimpleCV : Process the image and get image from the camera
 - pyrebase : For use firebase REST API
