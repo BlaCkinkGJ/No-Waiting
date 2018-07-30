@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
@@ -38,27 +37,28 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:paddingTop="5dp"
-                android:text="Title"
+                android:text="Name"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/description"
+                android:id="@+id/lineName"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:maxLines="1"
-                tools:text="author" />
+                tools:text="lineName" />
 
             <TextView
-                android:id="@+id/enroll"
+                android:id="@+id/state"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:maxLines="1"
-                tools:text="company" />
+                tools:text="state" />
+
         </LinearLayout>
 
     </LinearLayout>

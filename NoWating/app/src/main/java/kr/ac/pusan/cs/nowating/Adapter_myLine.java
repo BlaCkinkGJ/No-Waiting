@@ -3,15 +3,10 @@ package kr.ac.pusan.cs.nowating;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
-import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,14 +18,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.ac.pusan.cs.nowating.Object.Obj_AdminAccount;
+import kr.ac.pusan.cs.nowating.Object.Obj_MyLine;
 
-public class Adapter_Admin extends RecyclerView.Adapter<Adapter_Admin.ViewHolder> {
+public class Adapter_myLine  extends RecyclerView.Adapter<Adapter_myLine.ViewHolder> {
     private Activity activity;
-    private ArrayList<Obj_AdminAccount> dataList;
+    private ArrayList<Obj_MyLine> dataList;
     //private ArrayList<Bitmap> imageList;
-    public Adapter_Admin(Activity activity, List<Obj_AdminAccount> dataList) {
+    public Adapter_myLine(Activity activity, List<Obj_MyLine> dataList) {
         this.activity = (Activity) activity;
-        this.dataList = (ArrayList<Obj_AdminAccount>) dataList;
+        this.dataList = (ArrayList<Obj_MyLine>) dataList;
     }
 
     @Override
@@ -42,8 +38,8 @@ public class Adapter_Admin extends RecyclerView.Adapter<Adapter_Admin.ViewHolder
         //ImageView image;
         CircularImageView image;
         TextView pubName;
-        TextView description;
-        TextView enroll;
+        TextView lineName;
+        TextView state;
         //TextView price;
         //TextView pubdate;
 
@@ -55,20 +51,20 @@ public class Adapter_Admin extends RecyclerView.Adapter<Adapter_Admin.ViewHolder
             image.setBorderWidth(10);
             image.addShadow();
             pubName = (TextView) itemView.findViewById(R.id.pubID);
-            description = (TextView) itemView.findViewById(R.id.description);
-            enroll = (TextView) itemView.findViewById(R.id.enroll);
+            lineName = (TextView) itemView.findViewById(R.id.lineName);
+            state = (TextView) itemView.findViewById(R.id.state);
             //price = (TextView) itemView.findViewById(R.id.price);
             //pubdate = (TextView) itemView.findViewById(R.id.pubdate);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //Toast.makeText(view.getContext(), "click " + dataList.get(getAdapterPosition()).Admin_Public_ID, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "click " + dataList.get(getAdapterPosition()).Admin_Public_ID, Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(view.getContext(), Activity_lineList.class);
-                    intent.putExtra("admin", (Serializable) dataList.get(getAdapterPosition()));
+                    //Intent intent = new Intent(view.getContext(), Activity_lineList.class);
+                    //intent.putExtra("admin", (Serializable) dataList.get(getAdapterPosition()));
 
-                    view.getContext().startActivity(intent);
+                    //view.getContext().startActivity(intent);
                 }
             });
 
@@ -83,19 +79,20 @@ public class Adapter_Admin extends RecyclerView.Adapter<Adapter_Admin.ViewHolder
         }
     }
 
-    public Adapter_Admin.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_admin, parent, false);
-        Adapter_Admin.ViewHolder viewHolder = new Adapter_Admin.ViewHolder(view);
+    public Adapter_myLine.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_myline, parent, false);
+        Adapter_myLine.ViewHolder viewHolder = new Adapter_myLine.ViewHolder(view);
         return viewHolder;
     }
 
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
-        final Obj_AdminAccount tmpData = dataList.get(position);
+    public void onBindViewHolder(final Adapter_myLine.ViewHolder holder, final int position) {
+        final Obj_MyLine tmpData = dataList.get(position);
         final Bitmap[] bitmap = new Bitmap[1];
         holder.pubName.setText(tmpData.Admin_Public_ID);
-        holder.description.setText(tmpData.Description);
+        holder.lineName.setText(tmpData.lineInfo.Line_Name);
+        holder.state.setText(tmpData.user.State);
 
         Glide.with(holder.itemView.getContext()).load(tmpData.Image).into(holder.image);
 
