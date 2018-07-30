@@ -59,12 +59,17 @@ public class Adapter_myLine  extends RecyclerView.Adapter<Adapter_myLine.ViewHol
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "click " + dataList.get(getAdapterPosition()).Admin_Public_ID, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(view.getContext(), "click " + dataList.get(getAdapterPosition()).Admin_Public_ID, Toast.LENGTH_SHORT).show();
 
-                    //Intent intent = new Intent(view.getContext(), Activity_lineList.class);
-                    //intent.putExtra("admin", (Serializable) dataList.get(getAdapterPosition()));
+                    Intent intent = new Intent(view.getContext(), Activity_LineInfo.class);
+                    intent.putExtra("line", (Serializable) dataList.get(getAdapterPosition()).lineInfo);
+                    Obj_AdminAccount adminAccount = new Obj_AdminAccount();
+                    adminAccount.Admin_Public_ID = dataList.get(getAdapterPosition()).Admin_Public_ID;
+                    adminAccount.Image = dataList.get(getAdapterPosition()).Image;
 
-                    //view.getContext().startActivity(intent);
+                    intent.putExtra("admin",adminAccount);
+
+                    view.getContext().startActivity(intent);
                 }
             });
 
