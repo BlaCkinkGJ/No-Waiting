@@ -111,32 +111,32 @@ router.post('/signup', upload.single('userfile'), (req, res) => {
             });
             //end get download url
         }
+
+        fs.writeFile('./uploads/' + publicID + '.prev', RSAKeyPair['private'], (writeErr) => {
+            if (writeErr) {
+                console.log(writeErr);
+            } else {
+                bucket.upload('./uploads/' + publicID + ".prev", {destination: keyDestName + 'key.prev'},  (uploadErr, uploadedFile) => {
+                    if (uploadErr) {
+                        console.log(uploadErr);
+                    }
+                });
+            }
+        })
+
+        fs.writeFile('./uploads/' + publicID + '.pub', RSAKeyPair['public'], (writeErr) => {
+            if (writeErr) {
+                console.log(writeErr);
+            } else {
+                bucket.upload('./uploads/' + publicID + ".pub", {destination: keyDestName + 'key.pub'},  (uploadErr, uploadedFile) => {
+                    if (uploadErr) {
+                        console.log(uploadErr);
+                    }
+                });
+            }
+        })
         res.redirect('/login');
     });
-
-    fs.writeFile('./uploads/' + publicID + '.prev', RSAKeyPair['private'], (writeErr) => {
-        if (writeErr) {
-            console.log(writeErr);
-        } else {
-            bucket.upload('./uploads/' + publicID + ".prev", {destination: keyDestName + 'key.prev'},  (uploadErr, uploadedFile) => {
-                if (uploadErr) {
-                    console.log(uploadErr);
-                }
-            });
-        }
-    })
-
-    fs.writeFile('./uploads/' + publicID + '.pub', RSAKeyPair['public'], (writeErr) => {
-        if (writeErr) {
-            console.log(writeErr);
-        } else {
-            bucket.upload('./uploads/' + publicID + ".pub", {destination: keyDestName + 'key.pub'},  (uploadErr, uploadedFile) => {
-                if (uploadErr) {
-                    console.log(uploadErr);
-                }
-            });
-        }
-    })
 });
 
 module.exports = router;

@@ -9,11 +9,14 @@ const passport = require('passport');
 const passportConfig = require('./passport');
 const session = require('express-session');
 
+const app = express();
+
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+
 const indexRouter   = require('./routes/index');
 const loginRouter   = require('./routes/login');
-const layoutRouter  = require('./routes/layout');
-
-const app = express();
+const layoutRouter  = require('./routes/layout')(io);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +41,7 @@ app.use('/layout', layoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "http://localhost:3000");
     next(createError(404));
 });
 
@@ -53,8 +57,7 @@ app.use(function(err, req, res, next) {
     //res.render('error');
 });
 
-app.listen(3000, ()=>{
-    console.log('3000 port connected');
-})
 
-module.exports = app;
+server.listen(3000, function(){
+    console.log('listening on *:3000');
+});

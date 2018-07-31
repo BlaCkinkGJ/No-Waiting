@@ -41,6 +41,7 @@ class DB{
 module.exports = {
     // USAGE 참조 할 것
     DB : new DB(__config__, __storage__),
+    FB : __FB__,
     DatabaseReference : DBRef,
     Bucket : bucket
 };

@@ -1,5 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<meta charset="utf-8">
+
 <head>
 	<title>Contact V13</title>
 	<meta charset="UTF-8">
@@ -28,13 +32,18 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/table.css">
+
 <!--===============================================================================================-->
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
 </head>
 <body>
 
-
 	<div class="container-contact100">
-		<div class="contact100-map" id="google_map" data-map-x="14.1234" data-map-y="90.124" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+		<div align="center"><canvas id="myChart" width="800%" height="750%" margin="0px"></canvas></div>
 
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method="post">
@@ -54,25 +63,79 @@
 						<thead>
 						<tr>
 							<th class="text-left">대기자 목록</th>
-							<th class="text-left">Entered</th>
+							<th class="text-left">Enter</th>
+							<th class="text-left">State</th>
 						</tr>
 						</thead>
-						<tbody class="table-hover">
+						<script>
+                            var socket = io('http://localhost:3000/userlist');
+                            socket.emit('connection', 'hello');
+                            socket.on('update', function(data) {
+                                var idx = 1;
+                                $("#list").empty();
+                                data.forEach((temp)=>{
+                                    $("#list").append("<tr>");
+                                    $("#list").append("<td>"+"User"+(idx++)+"</td>");
+                                    $("#list").append("<td>"+temp['Enter']+"</td>");
+                                    $("#list").append("<td>"+temp['State']+"</td>");
+                                    $("#list").append("</tr>");
+                                });
+                            });
+                            socket.on('updateEnrollments', function(temp) {
+                                var ctx = document.getElementById("myChart").getContext('2d');
+                                var myChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: ["월", "화", "수", "목", "금"],
+                                        datasets: [{
+                                            label: '오늘 손님수',
+                                            data: temp,
+                                            backgroundColor: [
+                                                'rgba(255, 99, 132, 0.2)',
+                                                'rgba(54, 162, 235, 0.2)',
+                                                'rgba(255, 206, 86, 0.2)',
+                                                'rgba(75, 192, 192, 0.2)',
+                                                'rgba(153, 102, 255, 0.2)'
+                                            ],
+                                            borderColor: [
+                                                'rgba(255,99,132,1)',
+                                                'rgba(54, 162, 235, 1)',
+                                                'rgba(255, 206, 86, 1)',
+                                                'rgba(75, 192, 192, 1)',
+                                                'rgba(153, 102, 255, 1)'
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero:true
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
 
+                            });
+							/*
+							google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(function() {
+  var chart = new google.visualization.ColumnChart(document.querySelector('#chart_div'));
+  chart.draw(google.visualization.arrayToDataTable(data), options);
+});
+							 */
 
-						<% for (var i = 0; i < userlist.length; i++) { %>
-						<tr>
-							<% var entered = userlist[i].State == "Check" ? "O" : "X" %>
-							<td class="text-left">User<%=i + 1%></td>
-							<td class="text-left"><%= entered %></td>
-						</tr>
-						<% } %>
+						</script>
 
-
-
+						<tbody class="table-hover" id = "list">
 						</tbody>
 					</table>
 				</div>
+
+
+
 				<span class="contact100-form-title">
 					<div class="row">
 						<h2>위에서부터 N명 통과</h2>
@@ -103,7 +166,7 @@
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--<script src="vendor/jquery/jquery-3.2.1.min.js"></script>-->
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
@@ -117,13 +180,8 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP6gfaOE8JTKtA2G6Ul0kDaM3i9n3hF_g"></script>
-	<script src="js/map-custom.js"></script>
-<!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
