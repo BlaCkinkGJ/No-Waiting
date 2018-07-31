@@ -1,3 +1,4 @@
+const fs            = require('fs');
 const express       = require('express');
 const router        = express.Router();
 const multer        = require('multer');
@@ -6,6 +7,7 @@ const path          = require('path');
 const DBRef         = require('../database').DatabaseReference;
 const bucket        = require('../database').Bucket;
 const Map           = require('../GPmodule/MapDAT').Map;
+const RSAKeyPair    = require('../GPmodule/RSA').keyPair;
 
 const passport = require('passport');
 
@@ -77,7 +79,7 @@ router.post('/signup', upload.single('userfile'), (req, res) => {
 
     //check file is image. if not warning.
     let destName = 'Admin/' + publicID + '/' + file.filename;
-
+    let keyDestName = 'Admin/' + publicID + '/';
 
     if (file.mimetype.split('/')[0] === 'image') {
         destName = destName + '.' + file.mimetype.split('/')[1];
@@ -85,12 +87,12 @@ router.post('/signup', upload.single('userfile'), (req, res) => {
 
     }
 
-    bucket.upload(path.join(mainPath, file.path), {destination : destName, metadata : { contentType : file.mimetype }}, function(err, file) {
+    bucket.upload(path.join(mainPath, file.path), {destination : destName, metadata : { contentType : file.mimetype }}, function(err, uploadedFile) {
         if (err) {
             console.log('Error');
         } else {
             //start get download url
-            file.getSignedUrl({
+            uploadedFile.getSignedUrl({
                 action : 'read',
                 expires : '03-09-2491'
             }).then(signedUrls => {
@@ -111,6 +113,30 @@ router.post('/signup', upload.single('userfile'), (req, res) => {
         }
         res.redirect('/login');
     });
+
+    fs.writeFile('./uploads/' + publicID + '.prev', RSAKeyPair['private'], (writeErr) => {
+        if (writeErr) {
+            console.log(writeErr);
+        } else {
+            bucket.upload('./uploads/' + publicID + ".prev", {destination: keyDestName + 'key.prev'},  (uploadErr, uploadedFile) => {
+                if (uploadErr) {
+                    console.log(uploadErr);
+                }
+            });
+        }
+    })
+
+    fs.writeFile('./uploads/' + publicID + '.pub', RSAKeyPair['public'], (writeErr) => {
+        if (writeErr) {
+            console.log(writeErr);
+        } else {
+            bucket.upload('./uploads/' + publicID + ".pub", {destination: keyDestName + 'key.pub'},  (uploadErr, uploadedFile) => {
+                if (uploadErr) {
+                    console.log(uploadErr);
+                }
+            });
+        }
+    })
 });
 
 module.exports = router;

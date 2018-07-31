@@ -41,19 +41,33 @@
 
 
   <% for (var i = 0; i < snapshot.length; i++) { %>
-  <div class="blog-card">
+    <div class="blog-card">
 
-	  <div class = "photo"><img src=<%=image %>></div>
-	  <div class="description">
-		  <h1><%= snapshot[i].INFO.Line_Name %></h1>
-		  <h2><%= snapshot[i].INFO.Public_ID %></h2>
-		  <p>Max number : <%= snapshot[i].INFO.Max_Number %></p>
-		  <p>Enroll number : <%= snapshot[i].INFO.Current_Enrollment_State%></p>
-		  <a href="line/?line_name=<%= snapshot[i].INFO.Line_Name %>">세부 정보</a>
-	  </div>
-  </div>
+  	  <div class = "photo"><img src=<%=image %>></div>
+  	  <div class="description" style="width:50%">
+  		  <h1><%= snapshot[i].INFO.Line_Name %></h1>
+  		  <h2><%= snapshot[i].INFO.Public_ID %></h2>
+  		  <p>Max number : <%= snapshot[i].INFO.Max_Number %></p>
+  		  <p>Enroll number : <%= snapshot[i].INFO.Current_Enrollment_State%></p>
+
+          <!--
+          <div class="container-login100-form-btn" >
+              <div class="wrap-login100-form-btn">
+                  <div class="login100-form-bgbtn"></div>
+                  <button class="login100-form-btn" onclick=>
+                      DELETE
+                  </button>
+              </div>
+              -->
+          <a href="line/?line_name=<%= snapshot[i].INFO.Line_Name %>">세부 정보</a>
+          </div>
+        <form method="post" action="?line_name=<%= snapshot[i].INFO.Line_Name %>">
+        <div class="description" style="width:auto; height:auto">
+            <input type="submit" value="X" name='deleteBtn' id=<%=snapshot[i].INFO.Line_Name%>>
+  	  </div>
+        </form>
+    </div>
   <% } %>
-
   <form action='/layout/register' class="contact100-form validate-form">
       <div class="container-login100-form-btn" >
           <div class="wrap-login100-form-btn">

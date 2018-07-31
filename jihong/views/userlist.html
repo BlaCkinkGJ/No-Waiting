@@ -27,47 +27,73 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/table.css">
 <!--===============================================================================================-->
 </head>
 <body>
 
 
 	<div class="container-contact100">
-		<div class="contact100-map" id="google_map" data-map-x=<%= location.x %> data-map-y=<%= location.y %> data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+		<div class="contact100-map" id="google_map" data-map-x="14.1234" data-map-y="90.124" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method="post">
 				<span class="contact100-form-title">
 					<%= INFO.Line_Name %>
+					<li>
+						Max number : <%= INFO.Max_Number %>
+					</li>
+
+					<li>
+						현재 등록 인원 : <%= INFO.Current_Enrollment_State %>
+					</li>
 				</span>
 
-				<li>
-					Max number : <%= INFO.Max_Number %>
-				</li>
-
-				<li>
-					현재 등록 인원 : <%= INFO.Current_Enrollment_State %>
-				</li>
-
-				<% for (var i = 0; i < userlist.length; i++) { %>
-				<p class="wrap-input100 validate-input" data-validate="Name is required">
-						<label class="container">User <%= i %>
-							<input type="checkbox" name = 'checkedUsers' value=/<%=userlist[i].User_ID%/> /<%=userlist[i].Enter == "can" ? 'readonly' : ''=%>>
-
-							<span class="checkmark"></span>
-					</label>
-				</p>
-				<% } %>
+				<div class="table-title">
+					<table class="table-fill">
+						<thead>
+						<tr>
+							<th class="text-left">대기자 목록</th>
+							<th class="text-left">Entered</th>
+						</tr>
+						</thead>
+						<tbody class="table-hover">
 
 
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							Send
-						</button>
-					</div>
+						<% for (var i = 0; i < userlist.length; i++) { %>
+						<tr>
+							<% var entered = userlist[i].State == "Check" ? "O" : "X" %>
+							<td class="text-left">User<%=i + 1%></td>
+							<td class="text-left"><%= entered %></td>
+						</tr>
+						<% } %>
+
+
+
+						</tbody>
+					</table>
 				</div>
+				<span class="contact100-form-title">
+					<div class="row">
+						<h2>위에서부터 N명 통과</h2>
+						<div class="col">
+							<div class="wrap-input100 validate-input">
+								<input class="input100" type="text" name="numPass">
+								<span class="focus-input100" data-placeholder="Pass Number"></span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="container-contact100-form-btn">
+								<div class="wrap-contact100-form-btn">
+									<div class="contact100-form-bgbtn"></div>
+									<button class="contact100-form-btn">
+										Send
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</span>
 			</form>
 		</div>
 	</div>

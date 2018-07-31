@@ -5,7 +5,7 @@ const path = require('path');
 
 
 const DB = require('../database').DB;
-const Enter = require('../GPmodule/Enter');
+const Enter = require('../GPmodule/Enter').Enter;
 
 /* !!!!!!!!!!! waning : below sentence can be executed differently on window and linux !!!!!!!!!! */
 const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\\')); //path of app.js file location, this is for window
@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
         const q = url.parse(req.url, true).query;
         const publicID = req.user.val().Admin_Public_ID;
+
         const lineName = q.line_name;
 
         let accountRef = DB.getReference("Admin_Account" + "/" + publicID);
@@ -54,24 +55,15 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-   const checkedUsers = req.body.checkedUsers;
-    const q = url.parse(req.url, true).query;
-    const publicID = req.user.val().Admin_Public_ID;
-    const lineName = q.line_name;
+   const numPass = req.body.numPass;
+   const q = url.parse(req.url, true).query;
+   const publicID = req.user.val().Admin_Public_ID;
+   const lineName = q.line_name;
 
-   const lineRef = DB.getReference("Line List/" + publicID + "/" + lineName + '/USER LIST');
+   let enter = new Enter(publicID, lineName);
+   enter.click(parseInt(numPass));
 
-   lineRef.once('value').then((snapshot) => {
-       console.log(snapshot.val());
-   })
-    console.log(checkedUsers);
-   for (let i = 0; i < checkedUsers.length; i++) {
-       lineRef.orderByChild('User_ID').equalTo(checkedUsers[i]).once('value').then((snapshot) => {
-           console.log(snapshot.val());
-       })
-   }
-
-   res.send('Got it');
+   res.redirect('/layout/line/?line_name=' + lineName);
 });
 
 module.exports = router;

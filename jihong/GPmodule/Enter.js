@@ -1,9 +1,9 @@
 const db = require("../database");
 
-class Enter{
+class _Enter{
     constructor(publicID, listName){
         this._path = "Line List"+"/"+publicID+"/"+listName + "/" + "USER LIST";
-        this._mydb = db.DB
+        this._mydb = db.DB;
         this._root = this._mydb.getReference(this._path);
     }
     click(number){
@@ -26,5 +26,5 @@ class Enter{
 
 
 module.exports = {
-    Enter : Enter
+    Enter : _Enter
 };

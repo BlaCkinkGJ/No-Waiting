@@ -59,20 +59,28 @@
 
                 <div class="wrap-input100 validate-input">
                     <div class="row">
-                        <div class="column">
+                        <div class="col">
                             <input class="input100" type="date" name="startDate">
                             <span class="focus-input100"></span>
                         </div>
-                        <div class="column">
-                            <input class="input100" type="text" name="startTime">
-                            <span class="focus-input100" data-placeholder="개장 시각 (시/분)></span>
+                        <div class="col">
+                           <input class="input100" type="text" name="startTime">
+                           <span class="focus-input100" data-placeholder="개장 시각 (시:분)"></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="date" name="closingDate">
-                    <span class="focus-input100" ></span>
+                    <div class="row">
+                        <div class="col">
+                            <input class="input100" type="date" name="closingDate">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <div class="col">
+                            <input class="input100" type="text" name="closingTime">
+                            <span class="focus-input100" data-placeholder="마감 시각 (시:분)"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="container-login100-form-btn" >
