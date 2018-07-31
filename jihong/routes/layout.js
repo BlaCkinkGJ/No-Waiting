@@ -11,6 +11,25 @@ const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\\')); //path of app.
 router.use(express.static(path.join(mainPath, '/public')));
 router.use('/line', lineRouter);
 
+router.get('/register', (req, res) => {
+   if (req.isAuthenticated())  {
+        res.render('newline');
+   } else {
+       res.redirect('/');
+   }
+});
+
+router.post('/register', (req, res) => {
+    const lineName = req.body.lineName;
+    const maxNumber = req.body.maxNumber;
+    const personalInterval = req.body.personalInterval;
+    let startDate = req.body.startDate;
+    let startTime = req.body.startTime;
+
+    console.log(startDate);
+    console.log(startTime);
+});
+
 router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
         let values = [];
@@ -18,7 +37,6 @@ router.get('/', (req, res) => {
             snapshot.forEach((data) => {
                 data.forEach((line) => {
                     values.push(line.val());
-                    console.log(values.length);
                 })
             });
             res.render('layout', { image : req.user.val().Image, snapshot : values});

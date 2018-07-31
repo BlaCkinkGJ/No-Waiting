@@ -7,12 +7,11 @@ const DBRef         = require('../database').DatabaseReference;
 const bucket        = require('../database').Bucket;
 const Map           = require('../GPmodule/MapDAT').Map;
 
-const tryLogin = require('../users').tryLogin;
-const ixExists = require('../users').isExists;
-
 const passport = require('passport');
 
-const mainPath = __dirname.slice(0, __dirname.lastIndexOf('/')); //path of app.js file location
+// !!!!!!!! warning : below sentence can be executed differently on linux and window platform. !!!!!!!!!!!
+const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\\')); //path of app.js file location in Window.
+//const mainPath = __dirname.slice(0, __dirname.lastIndexOf('\'); // in Linux
 router.use(express.static(path.join(mainPath, '/public')));
 
 /*

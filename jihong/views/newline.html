@@ -27,13 +27,6 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--===============================================================================================-->
     <script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src = "https://d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(()=>{$("#postcodify").postcodifyPopUp({
-                insertAddress : "#address"
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -41,64 +34,52 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
-            <form class="login100-form validate-form" method="post" enctype="multipart/form-data">
+            <form class="login100-form validate-form" method="post">
 					<span class="login100-form-title p-b-26">
-						Welcome
+						Line Register
 					</span>
                 <span class="login100-form-title p-b-48">
 						<i class="zmdi zmdi-font"></i>
 					</span>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="ID" style="text-align:left;">
-                    <span class="focus-input100" data-placeholder="ID"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-                    <input class="input100" type="password" name="pass" style="text-align:left;">
-                    <span class="focus-input100" data-placeholder="Password"></span>
+                    <input class="input100" type="text" name="lineName" style="text-align:left;">
+                    <span class="focus-input100" data-placeholder="Line Name"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="publicID" style="text-align:left;">
-                    <span class="focus-input100" data-placeholder="Public ID"></span>
+                    <input class="input100" type="text" name="maxNumber" style="text-align:left;">
+                    <span class="focus-input100" data-placeholder="최대 대기 인원 수 (명)"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="description" style="text-align:left;">
-                    <span class="focus-input100" data-placeholder="Description"></span>
+                    <input class="input100" type="text" name="personalInterval" style="text-align:left;">
+                    <span class="focus-input100" data-placeholder="입장 간격 (분)"></span>
                 </div>
-                </form>
 
-                  <div class="container-login100-form-btn" >
-                    <div class="wrap-login100-form-btn">
-                        <div class="login100-form-bgbtn"></div>
-                        <button class="login100-form-btn" id="postcodify">
-                            주소 찾기
-                        </button>
+                <div class="wrap-input100 validate-input">
+                    <div class="row">
+                        <div class="column">
+                            <input class="input100" type="date" name="startDate">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <div class="column">
+                            <input class="input100" type="text" name="startTime">
+                            <span class="focus-input100" data-placeholder="개장 시각 (시/분)></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="address" id="address" style="text-align:left;">
-                    <span class="focus-input100" data-placeholder="Address"></span>
-                </div>
-
-
-                <form class="login100-form validate-form" method="post" enctype="multipart/form-data">
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" type="file" name="userfile" style="text-align:left;">
-                    <span class="focus-input100" data-placeholder="file"></span>
+                    <input class="input100" type="date" name="closingDate">
+                    <span class="focus-input100" ></span>
                 </div>
 
                 <div class="container-login100-form-btn" >
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
                         <button class="login100-form-btn" onclick=>
-                            Sign Up
+                            Register
                         </button>
                     </div>
                 </div>

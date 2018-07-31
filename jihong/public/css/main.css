@@ -1,6 +1,6 @@
 
 
-
+#dt{text-indent: -500px;height:25px; width:200px;}
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
@@ -355,6 +355,7 @@ iframe {
   justify-content: center;
   padding-top: 13px;
 }
+
 
 .wrap-login100-form-btn {
   width: 100%;

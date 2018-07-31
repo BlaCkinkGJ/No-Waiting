@@ -33,33 +33,30 @@
 
 
 	<div class="container-contact100">
-		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
-
-		<div class="contact100-more">
-			<i class="zmdi zmdi-phone-in-talk"></i>
-			(+100) 345 6389
-		</div>
+		<div class="contact100-map" id="google_map" data-map-x=<%= location.x %> data-map-y=<%= location.y %> data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" method="post">
 				<span class="contact100-form-title">
-					<%= snapshot.INFO.Line_Name %>
+					<%= INFO.Line_Name %>
 				</span>
 
-				<p>
-					Max number : <%= snapshot.INFO.Max_Number %>
-				</p>
+				<li>
+					Max number : <%= INFO.Max_Number %>
+				</li>
 
-				<p>
-					현재 등록 인원 : <%= snapshot.INFO.Current_Enrollment_State %>
-				</p>
+				<li>
+					현재 등록 인원 : <%= INFO.Current_Enrollment_State %>
+				</li>
 
-				<% for (var i = 0; i < snapshot['USER LIST'].key.length; i++) { %>
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Name</span>
-					<input class="input100" type="text" name="name" placeholder="Name...">
-					<span class="focus-input100"></span>
-				</div>
+				<% for (var i = 0; i < userlist.length; i++) { %>
+				<p class="wrap-input100 validate-input" data-validate="Name is required">
+						<label class="container">User <%= i %>
+							<input type="checkbox" name = 'checkedUsers' value=/<%=userlist[i].User_ID%/> /<%=userlist[i].Enter == "can" ? 'readonly' : ''=%>>
+
+							<span class="checkmark"></span>
+					</label>
+				</p>
 				<% } %>
 
 
@@ -94,7 +91,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP6gfaOE8JTKtA2G6Ul0kDaM3i9n3hF_g"></script>
 	<script src="js/map-custom.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
