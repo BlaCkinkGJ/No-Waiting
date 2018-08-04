@@ -1,0 +1,378 @@
+{
+  "Admin_Account" : {
+    "3pop PC (부산대 정문)" : {
+      "Admin_Private_ID" : "test03",
+      "Admin_Private_password" : "03",
+      "Admin_Public_ID" : "3pop PC (부산대 정문)",
+      "Description" : "#pc방 #1시간500원",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F3pop+PC+%28%EB%B6%80%EC%82%B0%EB%8C%80+%EC%A0%95%EB%AC%B8%29%2F1532892989321.jpg?alt=media&token=dafac324-43d9-46f8-bc00-b9a3518704ff",
+      "x" : 35.231176,
+      "y" : 129.088085
+    },
+    "CU 편의점 (서면)" : {
+      "Admin_Private_ID" : "test02",
+      "Admin_Private_password" : "02",
+      "Admin_Public_ID" : "CU 편의점 (서면)",
+      "Description" : "#편의점 #CU #서면",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2FCU+%ED%8E%B8%EC%9D%98%EC%A0%90+%28%EC%84%9C%EB%A9%B4%29%2F1532896306156.png?alt=media&token=e5139283-a669-4071-9aab-936658caf971",
+      "x" : 35.15766,
+      "y" : 129.057363
+    },
+    "고요남 (부산대)" : {
+      "Admin_Private_ID" : "test08",
+      "Admin_Private_password" : "08",
+      "Admin_Public_ID" : "고요남 (부산대)",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%EA%B3%A0%EC%9A%94%EB%82%A8+%28%EB%B6%80%EC%82%B0%EB%8C%80%29%2Fdownloadfile.jpg?alt=media&token=75daca82-8d46-4c09-8652-ac307cb99970",
+      "x" : 35.23164,
+      "y" : 129.087793
+    },
+    "마이피누 (부산대)" : {
+      "Admin_Private_ID" : "test06",
+      "Admin_Private_password" : "1234",
+      "Admin_Public_ID" : "마이피누 (부산대)",
+      "Description" : "#부산대 #커뮤니티",
+      "Image" : "https://storage.googleapis.com/no-waiting-de057.appspot.com/Admin%2F%EB%A7%88%EC%9D%B4%ED%94%BC%EB%88%84%20(%EB%B6%80%EC%82%B0%EB%8C%80)%2Fmypnu-logo.jpg?GoogleAccessId=firebase-adminsdk-s5w98%40no-waiting-de057.iam.gserviceaccount.com&Expires=16446985200&Signature=kdjP8EtUoLbTFxlM8Swanl8SrOQb6J0S8AZUEqLQhkjcacPf%2B3rwLbeBtQ%2FZQrlPuDzCQSotP6xkwvlwAAABa6fKEnoe%2B1vqakVc0IMbB6%2BaOAp0hiv%2FaR4QeVtneTHDDwQBmR1Go9vuEjclEMwP%2B8GqKThmqVv%2FnHk8tftAuSkQKLolVCFBxQlHKTDmsBvXm28RLsPcHgbpGockLi4K8epLGw%2FLPxQ7M9IPO5qtG5pSCfwd2YfVdQegL9ExlMLWQRrB%2BDRSNHDk4L%2FZVKu1TaC5i1KZsdFCTWYHpn8TOGd1cSI2kDtY5D5l5dcvOFRnJvaZsiyw%2B2hZPHlJVYMiTw%3D%3D",
+      "x" : 0,
+      "y" : 0
+    },
+    "맥도날드 (사직동)" : {
+      "Admin_Private_ID" : "test09",
+      "Admin_Private_password" : "09",
+      "Admin_Public_ID" : "맥도날드 (사직동)",
+      "Description" : "#패스트푸드",
+      "Image" : "https://storage.googleapis.com/no-waiting-de057.appspot.com/Admin%2F%EB%A7%A5%EB%8F%84%EB%82%A0%EB%93%9C%20(%EC%82%AC%EC%A7%81%EB%8F%99)%2Fa2b4714ea82e90650d4c38d95d3808fc.png?GoogleAccessId=firebase-adminsdk-s5w98%40no-waiting-de057.iam.gserviceaccount.com&Expires=16446985200&Signature=FG6VSsIh2SDPOWbzyQDK%2BPX2%2F1dk2O1CYzuxhv%2FgOWcYwwx%2B4TtFsBtC5FwN6dNM7EOzEODOSlhVZvKJRqO4MW%2F04RrhpbpBlg318zHR%2BsPiV%2Fa5vXbm4fafY9IMZOaSPG0cAUsMSd6SWiimtqR5pQnKmjtiMO%2FrbRxCTh2fyWKe%2BT4EeeXRHtUl8xDC8aX73tKIZPEiWqMzfyGz3edaSm2w8t%2BtS%2F9A08dPZtajb0GA%2BvOtbFnu%2B%2FpWJoVNt3kryvAOnpzysqsKZwD%2BpI7A%2FzRQy1hwA94PX0rZ5awXh1pc952%2BBxc0DfbmJUoLsgojYP%2FSGBcHyYZ9ET6zzrHuwg%3D%3D",
+      "x" : 35.19439694648417,
+      "y" : 129.0670930789586
+    },
+    "설빙 (부산대점)" : {
+      "Admin_Private_ID" : "test11",
+      "Admin_Private_password" : "11",
+      "Admin_Public_ID" : "설빙 (부산대점)",
+      "Description" : "#빙수",
+      "Image" : "https://storage.googleapis.com/no-waiting-de057.appspot.com/Admin%2F%EC%84%A4%EB%B9%99%20(%EB%B6%80%EC%82%B0%EB%8C%80%EC%A0%90)%2Fa9ac0788873fb34b425d566100936911.png?GoogleAccessId=firebase-adminsdk-s5w98%40no-waiting-de057.iam.gserviceaccount.com&Expires=16446985200&Signature=QMQPeX%2Bb2ArjypSpZfx%2F8nlJlVLvvkms84F%2BuxleyjyNqEQMgIyJfDv%2BDIVVlefX4VNBUhfNpFwoagu%2F1%2F4WN8rC4kCaXdiYOInwkplV7AM3pe9ZCDfGg84f2gjpHiTxZM49tgWItHHBa5%2By46I29XBIQFKNlqpOFxESOP1olWtM2vSzVvZ9AGAaEEzAoJn1TfdvoGavyOS2HNrrBe9cCUVw48l5QwVw5VMrOuH6KPXEJrv%2BC1hYJ21OCJ8WN4xz4DXePNd%2FVY8rQt3wuAsj%2F0S%2BmO1cHcxC7kmuWMJu5BM7jq4st%2FARpXPjyOpHF3v7iE2Tvf9SufkhDZ6h7vdLbQ%3D%3D",
+      "x" : 35.23121355545513,
+      "y" : 129.08521293538746
+    },
+    "스타벅스 (부산대)" : {
+      "Admin_Private_ID" : "test04",
+      "Admin_Private_password" : "04",
+      "Admin_Public_ID" : "스타벅스 (부산대)",
+      "Description" : "#스타벅스 #부산대",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4+%28%EB%B6%80%EC%82%B0%EB%8C%80%29%2F1532892991580.jpg?alt=media&token=5420def1-e778-4149-a279-3063e1c16a8c",
+      "x" : 35.232053,
+      "y" : 129.084551
+    },
+    "엔씨백화점 (부산대)" : {
+      "Admin_Private_ID" : "test08",
+      "Admin_Private_password" : "08",
+      "Admin_Public_ID" : "엔씨백화점 (부산대)",
+      "Description" : "#백화점",
+      "Image" : "https://storage.googleapis.com/no-waiting-de057.appspot.com/Admin%2F%EC%97%94%EC%94%A8%EB%B0%B1%ED%99%94%EC%A0%90%20(%EB%B6%80%EC%82%B0%EB%8C%80)%2F00f4899e64a15fffd458efc7398b2ee8.png?GoogleAccessId=firebase-adminsdk-s5w98%40no-waiting-de057.iam.gserviceaccount.com&Expires=16446985200&Signature=H1nIcC8ky8WkLRv7P6Bf%2FRvOJQGCpPpGaq9ReAWbQS7fogDMumtW7aNvhfCYAbTSLDbwQx0bhWXsuEGdzOPXY6auaR3kIrY47QBd7Ub6zoIp3CqIm0AqUPkkvpQ1t0OeLht0NCwPYuS3RiXch%2FV3iw0N%2BlPx%2Fa7cjqoEbr%2B87vEFexy%2FxjOy4iefXrPACPo%2F%2F6TrgrvoZnOmlp%2F5w4Z3qcKxrNWpXHwB1yF5FIBbKil4q8qiTjs6bdrcY1lBr1C1KalY4bq%2FHiLOBNZuw0p1GcVQtqQHddrtU0c%2BmyhXCr9CK0%2BfggSnwww3yziHyeMMaPjKNUZ8vBMV9VqU7tzo9Q%3D%3D",
+      "x" : 35.23224315372529,
+      "y" : 129.0838246824128
+    },
+    "우마이도 (서면)" : {
+      "Admin_Private_ID" : "test07",
+      "Admin_Private_password" : "07",
+      "Admin_Public_ID" : "우마이도 (서면)",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%EC%9A%B0%EB%A7%88%EC%9D%B4%EB%8F%84+%28%EC%84%9C%EB%A9%B4%29%2F1532975756851.jpg?alt=media&token=8842a3ee-7c6b-4fcb-a42d-605f5ccccf6b",
+      "x" : 35.15661,
+      "y" : 129.058255
+    },
+    "유가네 닭갈비 (부산대 점)" : {
+      "Admin_Private_ID" : "test01",
+      "Admin_Private_password" : "01",
+      "Admin_Public_ID" : "유가네 닭갈비 (부산대 점)",
+      "Description" : "#유가네닭갈비 #본점",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%EC%9C%A0%EA%B0%80%EB%84%A4+%EB%8B%AD%EA%B0%88%EB%B9%84+%28%EB%B6%80%EC%82%B0%EB%8C%80+%EC%A0%90%29%2F1532892987011.jpg?alt=media&token=7f5b0add-f7d4-432d-9af5-4c2c3a1dc940",
+      "x" : 35.230463,
+      "y" : 129.085281
+    },
+    "푸드트럭-라면" : {
+      "Admin_Private_ID" : "06",
+      "Admin_Private_password" : "06",
+      "Admin_Public_ID" : "푸드트럭-라면",
+      "Description" : "#푸드트럭 페스티벌 #라면",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%EB%9D%BC%EB%A9%B4%2F1532975756851.jpg?alt=media&token=6f9b852f-c109-4df0-8812-7a32b22f2a3b",
+      "x" : 35.232288,
+      "y" : 129.081985
+    },
+    "푸드트럭-샌드위치" : {
+      "Admin_Private_ID" : "04",
+      "Admin_Private_password" : "04",
+      "Admin_Public_ID" : "푸드트럭-샌드위치",
+      "Description" : "#푸드트럭 페스티벌 #샌드위치",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98%2F1533065464793.jpg?alt=media&token=80c82a1d-96f0-49d8-8399-6b39d3e4e270",
+      "x" : 35.231761,
+      "y" : 129.081748
+    },
+    "푸드트럭-스테이크" : {
+      "Admin_Private_ID" : "01",
+      "Admin_Private_password" : "01",
+      "Admin_Public_ID" : "푸드트럭-스테이크",
+      "Description" : "#푸드트럭 페스티벌 #스테이크",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%81%AC%2F1533065469661.jpg?alt=media&token=5c329f0c-046e-45e1-a8a7-f6cd9f556916",
+      "x" : 35.231509,
+      "y" : 129.082512
+    },
+    "푸드트럭-아이스크림" : {
+      "Admin_Private_ID" : "02",
+      "Admin_Private_password" : "02",
+      "Admin_Public_ID" : "푸드트럭-아이스크림",
+      "Description" : "#푸드트럭 페스티벌 #아이스크림",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%EC%95%84%EC%9D%B4%EC%8A%A4%ED%81%AC%EB%A6%BC%2F1533065467202.jpg?alt=media&token=1ba1da75-e999-4ef8-bb07-a21250b18482",
+      "x" : 35.232013,
+      "y" : 129.082748
+    },
+    "푸드트럭-양꼬치" : {
+      "Admin_Private_ID" : "07",
+      "Admin_Private_password" : "07",
+      "Admin_Public_ID" : "푸드트럭-양꼬치",
+      "Description" : "#푸드트럭 페스티벌 #양꼬치",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%EC%96%91%EA%BC%AC%EC%B9%98%2F1533065462115.jpg?alt=media&token=46761a57-1517-4dea-aaa2-3334732e17c0",
+      "x" : 35.231932,
+      "y" : 129.083148
+    },
+    "푸드트럭-컵밥" : {
+      "Admin_Private_ID" : "00",
+      "Admin_Private_password" : "00",
+      "Admin_Public_ID" : "푸드트럭-컵밥",
+      "Description" : "#푸드트럭 페스티벌 #컵밥",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%EC%BB%B5%EB%B0%A5%2F1533065470815.jpg?alt=media&token=92e05426-c2d7-45e1-80e7-8ac895ab9912",
+      "x" : 35.231041,
+      "y" : 129.082784
+    },
+    "푸드트럭-파스타" : {
+      "Admin_Private_ID" : "08",
+      "Admin_Private_password" : "08",
+      "Admin_Public_ID" : "푸드트럭-파스타",
+      "Description" : "#푸드트럭 페스티벌 #파스타",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%ED%8C%8C%EC%8A%A4%ED%83%80%2F1533065534047.jpg?alt=media&token=abb2d155-bfbc-4c1e-a086-9b5dad6b1f74",
+      "x" : 35.231709,
+      "y" : 129.083511
+    },
+    "푸드트럭-핫도그" : {
+      "Admin_Private_ID" : "03",
+      "Admin_Private_password" : "03",
+      "Admin_Public_ID" : "푸드트럭-핫도그",
+      "Description" : "#푸드트럭 페스티벌 #핫도그",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%ED%95%AB%EB%8F%84%EA%B7%B8%2F1533065465989.jpg?alt=media&token=5a8afa58-2823-4c1c-9847-f7ec724877af",
+      "x" : 35.232436,
+      "y" : 129.08332
+    },
+    "푸드트럭-햄버거" : {
+      "Admin_Private_ID" : "05",
+      "Admin_Private_password" : "05",
+      "Admin_Public_ID" : "푸드트럭-햄버거",
+      "Description" : "#푸드트럭 페스티벌 #햄버거",
+      "Image" : "https://firebasestorage.googleapis.com/v0/b/no-waiting-de057.appspot.com/o/Admin%2F%ED%91%B8%EB%93%9C%ED%8A%B8%EB%9F%AD-%ED%96%84%EB%B2%84%EA%B1%B0%2F1533065463481.jpg?alt=media&token=b74d8fc0-5e1e-4119-982a-7efc5430e37a",
+      "x" : 35.232474,
+      "y" : 129.082521
+    }
+  },
+  "Line List" : {
+    "스타벅스 (부산대)" : {
+      "8월 사은품" : {
+        "ADMIN_ID" : "test04",
+        "INFO" : {
+          "Closing_Time" : "2018-08-02 08:19",
+          "Current_Enrollment_State" : 2,
+          "Line_Name" : "8월 사은품",
+          "Max_Number" : 20,
+          "Opening_Time" : "2018-07-30 04:19",
+          "Personal_Interval" : "2",
+          "Public_ID" : "스타벅스 (부산대)",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAN++Gh8saWjhdKjWOlzeZ/Uq6vvJ78yEFrfuCY8uiaaI\nXLEKmyTRqWupBs/o0YJ/YUTEGzqK7eQaK4UlcraZqGsCAwEAAQ==\n"
+        },
+        "USER LIST" : {
+          "-LIh4yoi_gwR6oDZj352" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "NkFt9a+fC7TVbJ8WbFWGP1WkAPktFw/YVna6ZPU+eqdDiJleaKWbrFoP3OoMvkS/Lk5M2LzIVNt4\nVgH4oti7EA==\n"
+          },
+          "-LIljDIXPP2qLucjGRYI" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "GrGj01LQenfL9mzQiPaD2omnTNczSyU6/9/YbT+i6X6rxdS/F0Tt7XkM4rbaDpEa87BcqEgef+Kp\neW0ydD4AIg==\n"
+          },
+          "-LIrIbiuClwKW0dVTbLJ" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "lFuZKUbRASC8+HVQ0gnl3jFBzmiU0GG5aUiyrv63Gg9gs9h2k+0oeXwfRDVjKmEe4fXhSk+iLKdI\nUfYH19ptVg==\n"
+          }
+        }
+      }
+    },
+    "유가네 닭갈비 (부산대 점)" : {
+      "0_월요일" : {
+        "ADMIN_ID" : "test01",
+        "INFO" : {
+          "Closing_Time" : "2018-08-02 04:19",
+          "Current_Enrollment_State" : 6,
+          "Line_Name" : "0_월요일",
+          "Max_Number" : 50,
+          "Opening_Time" : "2018-08-01 00:19",
+          "Personal_Interval" : "5",
+          "Public_ID" : "유가네 닭갈비 (부산대 점)",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALF7HLQ5CEsIuiyk6BGzcCOm6fUW7h0D0Ng18fwZL2so\nT+DJcsWDXzFKsEhPPu/4+QmTlHABUl1kfzxxrYn7bpMCAwEAAQ==\n"
+        },
+        "USER LIST" : {
+          "-LIe3r2FbQC8un2xrXQO" : {
+            "Enter" : "can",
+            "State" : "Check",
+            "User_ID" : "P2tX3lDamIiMl3//DwsAJpzX0fXaWYIfgT/0mZnlkFQH4CKoeoMp9GXhJxVRc5euAxBw/pm5P0c0\nRlR9l7koSA==\n"
+          },
+          "-LIebIscCmEmDbyEWeDX" : {
+            "Enter" : "can",
+            "State" : "wait",
+            "User_ID" : "Epa74L/yvCfaAtn1z/8ozmuQQbKJdLuOhJumMCdBtT/8nVAp6buToxd90gozNbzfc4FerpE7B2GJ\nu4/TGtso3A==\n"
+          },
+          "-LIgAT3_mM144P0W5JqF" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "hB1dvF16hI4ogCb0y/71K/69IO1hQpLoPl2oVvBy9WJ45AZA+50m2ChbS/IsvwA0C56vEuWBl9Jt\nGOYXvGNccw==\n"
+          },
+          "-LIhzqZXOi9btwdoI_nW" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "J4q9EqlZY5RzmysC/AK8ydCqZKMMVZR01OJH33qszKbAr8FA0YF92JqxmRDsMxqUEQUWc8kMOzdE\nu0YP7EBTnw==\n"
+          },
+          "-LIihUBZxSgazYCgNPXk" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "JxYWlN+erhwdZJ4nOak+N8ApnGhinHdh64hlKhtXxP7LnU/Bu2PBM8r+l6FvkfV3Al8iqWM7LbOW\nJQ6jCV2LZw==\n"
+          },
+          "-LIlVq0jRY3pAhAaDEEC" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "brdIG/542bTbLLvPIPqJCVimvb8klRCFk5Tz0rSaZ26y9AEcwlyMj992Cei/wETesln/d7KyzYrj\n7Igr5ogZ0Q==\n"
+          }
+        }
+      },
+      "1_화요일" : {
+        "ADMIN_ID" : "test01",
+        "INFO" : {
+          "Closing_Time" : "2018-7-30 06:19",
+          "Current_Enrollment_State" : 5,
+          "Line_Name" : "1_화요일",
+          "Max_Number" : 20,
+          "Opening_Time" : "2018-06-21 04:19",
+          "Personal_Interval" : "2",
+          "Public_ID" : "유가네 닭갈비 (부산대 점)",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMe7+5leNm6kLnz7xXmo/PSZ65IinyjBKOOcIT8dIzh6\n48H8N/iUhbxqVmci+zInaf9IQbOIKKjZgOk+8UG/QN8CAwEAAQ==\n"
+        }
+      },
+      "2_수요일" : {
+        "ADMIN_ID" : "test01",
+        "INFO" : {
+          "Closing_Time" : "2018-10-23 06:19",
+          "Current_Enrollment_State" : 5,
+          "Line_Name" : "2_수요일",
+          "Max_Number" : 20,
+          "Opening_Time" : "2018-10-21 04:19",
+          "Personal_Interval" : "1",
+          "Public_ID" : "유가네 닭갈비 (부산대 점)",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMe7+5leNm6kLnz7xXmo/PSZ65IinyjBKOOcIT8dIzh6\n48H8N/iUhbxqVmci+zInaf9IQbOIKKjZgOk+8UG/QN8CAwEAAQ==\n"
+        }
+      },
+      "3_목요일" : {
+        "ADMIN_ID" : "test01",
+        "INFO" : {
+          "Closing_Time" : "2018-06-23 06:19",
+          "Current_Enrollment_State" : 8,
+          "Line_Name" : "3_목요일",
+          "Max_Number" : 20,
+          "Opening_Time" : "2018-05-21 04:19",
+          "Personal_Interval" : "8",
+          "Public_ID" : "유가네 닭갈비 (부산대 점)",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMe7+5leNm6kLnz7xXmo/PSZ65IinyjBKOOcIT8dIzh6\n48H8N/iUhbxqVmci+zInaf9IQbOIKKjZgOk+8UG/QN8CAwEAAQ==\n"
+        }
+      },
+      "4_금요일" : {
+        "ADMIN_ID" : "test01",
+        "INFO" : {
+          "Closing_Time" : "2018-06-23 06:19",
+          "Current_Enrollment_State" : 2,
+          "Line_Name" : "4_금요일",
+          "Max_Number" : 20,
+          "Opening_Time" : "2018-06-21 04:19",
+          "Personal_Interval" : "2",
+          "Public_ID" : "유가네 닭갈비 (부산대 점)",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMe7+5leNm6kLnz7xXmo/PSZ65IinyjBKOOcIT8dIzh6\n48H8N/iUhbxqVmci+zInaf9IQbOIKKjZgOk+8UG/QN8CAwEAAQ==\n"
+        }
+      }
+    },
+    "푸드트럭-라면" : {
+      "목요일" : {
+        "ADMIN_ID" : "06",
+        "INFO" : {
+          "Closing_Time" : "2018-08-16 04:19",
+          "Current_Enrollment_State" : 1,
+          "Line_Name" : "목요일",
+          "Max_Number" : 60,
+          "Opening_Time" : "2018-06-21 04:19",
+          "Personal_Interval" : "3",
+          "Public_ID" : "푸드트럭-라면",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALsbvogMYg8+ajbXv6AlD9Em3WbwTPn+39ZgzUJE4kl4\nYd2sP25E7TRy2zTRvdfvzAOKlVefL74N5hqgXKhIhkUCAwEAAQ==\n"
+        },
+        "USER LIST" : {
+          "-LIm2-XX5Oh0OvHPqlW3" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "CeEIWd6RhYHVpAYG7syUFOlZqnYERQdzHhc+JsnrJB3i4Y/8oIBzSo6glYhCIaXsIGBR9amcAGZ9\n1K6wno0OfQ==\n"
+          }
+        }
+      }
+    },
+    "푸드트럭-스테이크" : {
+      "수요일" : {
+        "ADMIN_ID" : "01",
+        "INFO" : {
+          "Closing_Time" : "2018-08-16 04:19",
+          "Current_Enrollment_State" : 1,
+          "Line_Name" : "수요일",
+          "Max_Number" : 100,
+          "Opening_Time" : "2018-06-21 04:19",
+          "Personal_Interval" : "3",
+          "Public_ID" : "푸드트럭-스테이크",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALJQN10yI7PI7rEvPfiArTQ8Bldnjz9fzwPZ7hoGrhS3\noxCC1lr42kT5kYYT9M/10uMY6ndxrOqQkgwGBoxmDAUCAwEAAQ==\n"
+        },
+        "USER LIST" : {
+          "-LImUNTM2lJf1-OVXayV" : {
+            "Enter" : "cant",
+            "State" : "wait",
+            "User_ID" : "ihGDbFtxU5nfO+fQWJI9Ov+wmTh0ZU6sf9yLgmMVqr+lzu9kzAWXNkB0PIrhsLlm63ttl4ZXYcbp\nqUxVtGcr7g==\n"
+          }
+        }
+      },
+      "화요일" : {
+        "ADMIN_ID" : "01",
+        "INFO" : {
+          "Closing_Time" : "2018-06-21 04:19",
+          "Current_Enrollment_State" : 0,
+          "Line_Name" : "화요일",
+          "Max_Number" : 60,
+          "Opening_Time" : "2018-06-21 04:19",
+          "Personal_Interval" : "1",
+          "Public_ID" : "푸드트럭-스테이크",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwRpbNlHmKNgMjRZkIuCMmHHIbDyu/anS0XSDXiJwum\nRs7iP7e8KC1yD6S6GJfIK9ubJ0HEg7XMVQobOPbdKAUCAwEAAQ==\n"
+        }
+      }
+    },
+    "푸드트럭-컵밥" : {
+      "월요일" : {
+        "ADMIN_ID" : "00",
+        "INFO" : {
+          "Closing_Time" : "2018-08-02 04:19",
+          "Current_Enrollment_State" : 0,
+          "Line_Name" : "월요일",
+          "Max_Number" : 20,
+          "Opening_Time" : "2018-07-31 04:19",
+          "Personal_Interval" : "2",
+          "Public_ID" : "푸드트럭-컵밥",
+          "Public_Key" : "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALDasmPEMwSa1UgH/0Uv9ovIrt5mSRFdvO/fIBymxbmR\nI2IwXtUKDLgLIj7KJ1RRyj/qkl/5H9P2ZtNJHyeJ7OcCAwEAAQ==\n"
+        }
+      }
+    }
+  }
+}
